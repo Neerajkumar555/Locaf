@@ -14,7 +14,19 @@
     
     
         <!-- Optional styles and scripts of your own -->
-    
+        <style>
+            #welcome {
+                min-height: 50%;
+            }
+            #mission {
+                background-color: white;
+                color: black;
+                opacity: 0.9;
+            }
+            #missionread {
+                opacity: 1;
+            }
+        </style>
     
     </head>
     
@@ -26,7 +38,7 @@
         <!-- Header Navigation Bar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-warning">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Neeraj</a>
+                <a class="navbar-brand" href="index.html">Locaf</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,16 +46,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="main.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="aboutus.html">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Richard</a>
+                            <a class="nav-link" href="Search.html">Search</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Oscar</a>
+                            <a class="nav-link" href="profile.html">Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Parsa</a>
@@ -53,10 +65,39 @@
             </div>
         </nav>
     
-        <div class="container">
-            <h1 class="display-4">Welcome to Locaf!</h1>
+        <div class="container-fluid" id="welcome">
+            <h1 class="display-4" style="text-align: center;">Main page</h1>
         </div>
-    
+
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/CoffeeTable.jpg" class="d-block w-100" alt="A coffee table.">
+                    <div class="carousel-caption d-none d-md-block" id="mission">
+                        <h5>Our Mission</h5>
+                        <p>Our team is dedicated to helping people struggling to find locations to study/work in due to the abundance of options available. 
+                        We aim to match people to their ideal study/work location by curating locations that fit their chosen preferences, ensuring that 
+                        everyone can find a safe and healthy environment that best suits their needs.
+                        </p>
+                        <a class="btn btn-primary" href="aboutus.html" role="button" style="background-color: orange;" id="missionread">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
         <!----------------------------------------------->
         <!-- JS: Boostrap, Firebase, API related    -->
         <!----------------------------------------------->
@@ -68,13 +109,6 @@
         <!-- JS files: Your own JavaScript functions included here    -->
         <!--------------------------------------------------------------------->
 
-        <div class="card" style="width: 80%;">
-            <img src="images/CoffeeTable.jpg" class="card-img-top" alt="Cups of coffee on a table.">
-            <div class="card-body">
-                <h5 class="card-title">Our mission</h5>
-                <p class="card-text">We strive to solve the issues regarding an overabundance of choice in today's society.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
+
     </body>
 </html>
