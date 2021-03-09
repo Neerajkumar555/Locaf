@@ -1,262 +1,246 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>My BCIT Project</title>
-        <meta name="comp1800 boilerplate code" content="my bcit project">
-        <meta name="author" content="BCIT">
-    
-        <!-- Bootstrap for Mobile-first, and JQuery -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    
-    
-        <!-- Optional styles and scripts of your own -->
-        <style>
-            #welcome {
-                min-height: 50%;
-            }
-            .whitebox {
-                background-color: white;
-                color: black;
-                opacity: 0.9;
-            }
-            #missiontext {
-                margin: 5%;
-            }
-            #carouselExampleDark {
-                text-align: center;
-                margin: auto;
-                border-radius: 5%;
-            }
-            #title {
-                padding: 10%;
-                padding-bottom: 20%;
-                font-weight: bold;
-                text-align: center;
-                color: white;
-            }
-            #titlebutt {
-                text-align: center;
-                margin: auto;
-                background-color: orange;
-                border-color: white;
-            }
-            #titlecard {
-                text-align: center;
-                border-color: white;
-            }
-            #carouselmain {
-                border: 1px solid white;
-                width: 60vw;
-                text-align: center;
-                margin: auto;
-                border-radius: 10%;
-            }
-            .d-block {
-                border-radius: 10%;
-            }
-            .card {
-                margin: auto;
-            }
-            .newtitle {
-                margin-bottom: 5%;
-                text-align: center;
-                color: white;
-            }
-            body {
-                background-image: url(./images/TableBook.jpg);
-            }
-            #name {
-                font-size: 60pt;
-            }
-            .col {
-                width: 30%;
-                margin: auto;
-            }
-            .smallcards {
-                width: 70vw;
-                margin: auto;
-                margin-bottom: 10%;
-            }
 
-        </style>
+<head>
+    <meta charset="utf-8">
+    <title>My BCIT Project</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <meta name="author" content="BCIT">
+
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://kit.fontawesome.com/639661f4ad.js" crossorigin="anonymous"></script>
+    <!-- Optional styles and scripts of your own -->
     
-    </head>
-    
-    <body>
-    
-        <!-------------------------------------->
-        <!-- The following is HTML for layout -->
-        <!-------------------------------------->
-        <!-- Header Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
-                    <img alt="hello" src="images/logo.png">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="main.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="aboutus.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Search.html">Search</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="profile.html">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Parsa</a>
-                        </li>
-                    </ul>
-                </div>
+</head>
+
+<body>
+
+    <!-------------------------------------->
+    <!-- The following is HTML for layout -->
+    <!-------------------------------------->
+    <!-- Header Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand container2" href="index.html">
+                <img class="logo" alt="hello" src="images/logo.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Search.html">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " href="login.html">Login/Signup</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-
-
-        
-        <div id="title">
-            <h1 id="name">Locaf.</h1>
-            <p>Insert our slogan here.</p>
         </div>
+    </nav>
 
 
 
-        <div id="carouselmain">
-            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    
+
+    <div class="container mt-4">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-9">
+                <div class="card p-4 mt-3" id="searcharea">
+                    <div id="title">
+                        <h1 id="name">Locaf.</h1>
+                        <p>Insert our slogan here.</p>
+                    </div>
+                    <div class="d-flex justify-content-center px-5">
+                        <div class="search"> <input type="text" class="search-input" placeholder="Search for a location..." name=""> <a
+                                href="#" class="search-icon"> <i class="fa fa-search"></i> </a> </div>
+                    </div>
+                    <div class="row mt-4 g-1 px-4 mb-5">
+                        <div class="col-md-3">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> 
+                                <i class="fas fa-comment-slash"></i>
+                                <div class="text-center mg-text"> <span class="mg-text">Quiet</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> 
+                                <i class="fas fa-volume-up"></i>
+                                <div class="text-center mg-text"> <span class="mg-text">Lively</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> 
+                                <i class="fas fa-coffee"></i>
+                                <div class="text-center mg-text"> <span class="mg-text">Food/Drink</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> 
+                                <i class="fas fa-bolt"></i>
+                                <div class="text-center mg-text"> <span class="mg-text">Elec. Outlets</span> </div>
+                            </div>
+                        </div>
+                        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                    </div>
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="./images/CoffeeTable.jpg" class="d-block w-100" alt="A coffee table.">
-                        <div class="carousel-caption d-none d-md-block whitebox">
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="carouselmain">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="./images/CoffeeTable.jpg" class="d-block w-100" alt="A coffee table.">
+                    <div class="carousel-caption d-none d-md-block whitebox">
                         <h5>Our Mission</h5>
-                        <p>Our team is dedicated to helping people struggling to find locations to study/work in due to the abundance of options available.</p>
-                        <a class="btn btn-primary" href="aboutus.html" role="button" style="background-color: orange;">Read more</a>
-                        </div>
+                        <p>Our team is dedicated to helping people struggling to find locations to study/work in due to
+                            the abundance of options available.</p>
+                        <a class="btn btn-primary" href="aboutus.html" role="button"
+                            style="background-color: #022b3a;">Read more</a>
                     </div>
-                    <div class="carousel-item" data-bs-interval="2000">
-                        <img src="./images/CafeLaptop.jpg" class="d-block w-100" alt="A student on his laptop.">
-                        <div class="carousel-caption d-none d-md-block whitebox">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="./images/CafeLaptop.jpg" class="d-block w-100" alt="A student on his laptop.">
+                    <div class="carousel-caption d-none d-md-block whitebox">
                         <h5>Search for productive locations that best fit you.</h5>
-                        <p>Through our carefully curated locations and defined specifications, use our system to find locations that fit your every specifications.</p>
-                        <a class="btn btn-primary" href="Search.html" role="button" style="background-color: orange;">Search now</a>
-                        </div>
+                        <p>Through our carefully curated locations and defined specifications, use our system to find
+                            locations that fit your every specifications.</p>
+                        <a class="btn btn-primary" href="Search.html" role="button"
+                            style="background-color: #022b3a;">Search now</a>
                     </div>
-                    <div class="carousel-item">
-                        <img src="./images/CoffeeTable.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/CoffeeTable.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
                         <h5>Third slide label</h5>
                         <p>Some representative placeholder content for the third slide.</p>
-                        </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <div class="smallcards">
-            <div class="newtitle">
-                <h1 id="locations">Top trending locations</h1>
-            </div>
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col">
-                    <div class="card">
-                        <img src="./images/CafeLaptop.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Restaurant 1</h5>
-                            <p class="card-text">Restaurant 1 information goes here</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="./images/CafeLaptop.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Cafe 1</h5>
-                            <p class="card-text">Cafe 1 information goes here</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="./images/CafeLaptop.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Cafe 2</h5>
-                            <p class="card-text">Cafe 2 information goes here</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="smallcards">
-            <div class="newtitle">
-                <h1 id="locations">Newly added locations</h1>
-            </div>
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col">
-                    <div class="card">
-                        <img src="./images/CafeLaptop.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Restaurant 1</h5>
-                            <p class="card-text">Restaurant 1 information goes here</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="./images/CafeLaptop.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Cafe 1</h5>
-                            <p class="card-text">Cafe 1 information goes here</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="./images/CafeLaptop.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Cafe 2</h5>
-                            <p class="card-text">Cafe 2 information goes here</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-        
+    </div>
 
-        <!----------------------------------------------->
-        <!-- JS: Boostrap, Firebase, API related    -->
-        <!----------------------------------------------->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-        </script>
+    <div class="smallcards">
+        <div class="newtitle">
+            <h1 id="locations">Top trending locations</h1>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="./images/CafeLaptop.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Restaurant 1</h5>
+                        <p class="card-text">Restaurant 1 information goes here</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="./images/CafeLaptop.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cafe 1</h5>
+                        <p class="card-text">Cafe 1 information goes here</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="./images/CafeLaptop.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cafe 2</h5>
+                        <p class="card-text">Cafe 2 information goes here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="smallcards">
+        <div class="newtitle">
+            <h1 id="locations">Newly added locations</h1>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="./images/CafeLaptop.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Restaurant 1</h5>
+                        <p class="card-text">Restaurant 1 information goes here</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="./images/CafeLaptop.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cafe 1</h5>
+                        <p class="card-text">Cafe 1 information goes here</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="./images/CafeLaptop.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cafe 2</h5>
+                        <p class="card-text">Cafe 2 information goes here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related    -->
+    <!----------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
     
-        <!--------------------------------------------------------------------->
-        <!-- JS files: Your own JavaScript functions included here    -->
-        <!--------------------------------------------------------------------->
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
 
 
-    </body>
+</body>
+
 </html>
