@@ -1,23 +1,7 @@
+/**TITLE**/
 #welcome {
     min-height: 50%;
 }
-
-.whitebox {
-    background-color: white;
-    color: black;
-    opacity: 0.9;
-}
-
-#missiontext {
-    margin: 5%;
-}
-
-#carouselExampleDark {
-    text-align: center;
-    margin: auto;
-    border-radius: 5%;
-}
-
 #title {
     padding: 5%;
     padding-bottom: 5%;
@@ -25,89 +9,24 @@
     text-align: center;
     color: #022b3a;
 }
-
-#titlebutt {
-    text-align: center;
-    margin: auto;
-    background-color: #022b3a;
-    border-color: white;
-}
-
-#titlecard {
-    text-align: center;
-    border-color: white;
-}
-
-#carouselmain {
-    border: 1px solid white;
-    width: 80vw;
-    text-align: center;
-    margin: auto;
-    border-radius: 10%;
-    margin-bottom: 5%;
-}
-
-.d-block {
-    border-radius: 10%;
-}
-
 .card {
     margin: auto;
     border: none;
     background: #eee
 }
-
-.newtitle {
-    margin-bottom: 5%;
-    text-align: center;
-    color: #022b3a;
-}
-
-body {
-    background-color: #e1e5f2;
-    color: #022b3a;
-}
-
-.navbar {
-    background-color: #022b3a;
-    color: #e1e5f2;
-    height: 80px;
-}
-.nav-item {
-    transition: 0.25s;
-}
-.nav-item:hover {
-    border: 2px solid white;
-    border-radius: .25rem;
-}
 #name {
     font-size: 60pt;
 }
 
-.col {
-    width: 30%;
-    margin: auto;
-}
-
-.smallcards {
-    width: 70vw;
-    margin: auto;
-    margin-bottom: 5%;
-}
-
-.container2 {
-    background-color: #e1e5f2;
-    width: 100px;
-    border-radius: 50%;
-}
-
-.logo {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-}
 
 /**SEARCH BAR**/
+#searcharea {
+    background-color: #e1e5f2;
+}
+.fas {
+    font-size: 40pt;
+    color: #1F7A8C;
+}
 .search {
     width: 100%;
     margin-bottom: auto;
@@ -117,7 +36,6 @@ body {
     padding: 10px;
     border-radius: 5px
 }
-
 .search-input {
     color: white;
     border: 0;
@@ -129,7 +47,6 @@ body {
     line-height: 20px;
     transition: width 0.4s linear
 }
-
 .search .search-input {
     padding: 0 10px;
     width: 100%;
@@ -139,7 +56,6 @@ body {
     color: black;
     transition: width 0.4s linear
 }
-
 .search-icon {
     height: 34px;
     width: 34px;
@@ -154,15 +70,13 @@ body {
     position: relative;
     border-radius: 5px
 }
-
 .search-icon:hover {
-    color: #fff !important
+    color: #fff !important;
+    background-color: #BFDBF7;
 }
-
 a:link {
     text-decoration: none
 }
-
 .card-inner {
     position: relative;
     display: flex;
@@ -178,23 +92,41 @@ a:link {
     transition: all 0.5s;
     color: #1F7A8C;
 }
-
 .card-inner:hover {
     transform: scale(1.1);
     color: #BFDBF7;
 }
-
 .mg-text span {
     font-size: 18px;
-
 }
 .mg-text {
     line-height: 20px;
 }
-#searcharea {
-    background-color: #e1e5f2;
+
+/*EXPLORE AREA*/
+#explore {
+    text-align: center;
+    margin: auto;
+    width: 80%;
 }
-.fas {
-    font-size: 40pt;
-    color: #1F7A8C;
+#exploretext {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-right: 20px;
+}
+#explore .nav-link.active {
+    background-color: #1F7A8C;
+}
+#explore .nav-link:hover {
+    border: 3px solid #1F7A8C;
+    background-color: #BFDBF7;
+}
+#pills-tabContent {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.col {
+    width: 33%;
+    margin: auto;
+    margin-bottom: 5%;
 }
