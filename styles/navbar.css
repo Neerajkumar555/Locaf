@@ -1,0 +1,27 @@
+body {
+    background-color: #e1e5f2;
+    color: #022b3a;
+}
+.navbar {
+    background-color: #022b3a;
+    background-image: var(--bs-gradient);
+    color: #e1e5f2;
+    height: auto;
+}
+.navbar .nav-item {
+    transition: 0.25s;
+}
+.navbar .nav-item:hover {
+    border: 2px solid white;
+    border-radius: .25rem;
+}
+.container2 {
+    background-color: #e1e5f2;
+    width: 75px;
+    border: 5px solid #022b3a;
+    border-radius: 1rem;
+}
+.logo {
+    width: 100%;
+    height: auto;
+}
