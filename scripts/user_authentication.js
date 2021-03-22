@@ -55,7 +55,6 @@
      privacyPolicyUrl: '<your-privacy-policy-url>'
  };
  // The start method will wait until the DOM is loaded.
-<<<<<<< HEAD
  ui.start('#firebaseui-auth-container', uiConfig);
 
  var provider = new firebase.auth.FacebookAuthProvider();
@@ -86,6 +85,3 @@
 
     // ...
   });
-=======
- ui.start('#firebaseui-auth-container', uiConfig);
->>>>>>> 526bcfc072466a4b6e26078de6520d849da2fde2
