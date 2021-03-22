@@ -1,0 +1,16 @@
+<form action="./submit.html">
+    <fieldset>
+        <legend>User Profile</legend>
+        <label>Username: </label>
+        <input type="text" id="username" name="username" placeholder="Username" pattern=[a-zA-Z]{8,20} required="required" autofocus="autofocus">
+        <br/>
+        <label>Password: </label>
+        <input type="password" id="password" name="password" placeholder="Password" pattern=[a-zA-Z0-9]{10,20} required="required">
+        <br/>
+        <label>Age: </label><input type="number" id="age" name="age" min=18 max=65 placeholder="Age">
+        <br/>
+        <br/>
+        <input type="submit" id="submit" name="submit">
+        <input type="reset" id="reset" name="reset">
+    </fieldset>
+</form>
