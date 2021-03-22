@@ -6,12 +6,20 @@ function getDataForm(e) {
     e.preventDefault();
 
     var formData = new FormData(form[0]);
-// Displays info on an alert box
-    alert (formData.get('username') + ' - ' + formData.get('password') 
-        + ' - ' + formData.get('age'));
+
+    var locationRef = db.collection("locations");
+
+    locationRef.add({
+        name: formData.get('username'),
+        address: formData.get('address'),
+        description: formData.get('description'),
+    });
+    addToDb();
+    alert(formData.get('username') + ' - ' + formData.get('address') +
+        ' - ' + formData.get('description'));
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     submitInput.addEventListener('click', getDataForm, false);
 
 }, false);
