@@ -2,8 +2,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <title>search</title>
+    <meta name="comp1800 boilerplate code" content="Search">
     <meta name="author" content="BCIT">
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
@@ -11,8 +11,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <script src="https://kit.fontawesome.com/639661f4ad.js" crossorigin="anonymous"></script>
     <!-- Optional styles and scripts of your own -->
+
     <style>
         * {
             box-sizing: border-box;
@@ -28,14 +36,12 @@
             padding: 70px;
         }
 
-        body {
-            background-color: lightgoldenrodyellow;
-        }
+
 
         form.example input[type=text] {
             padding: 10px;
             font-size: 17px;
-            border: 1px solid grey;
+            border: 1px solid #1f7a8c;
             float: left;
             width: 80%;
             background: #f1f1f1;
@@ -45,22 +51,23 @@
             float: left;
             width: 20%;
             padding: 10px;
-            background: #2196F3;
-            color: white;
+            background: #bfdbf7;
+            color: #022b3a;
             font-size: 17px;
-            border: 1px solid grey;
+            border: 1px solid #022b3a;
             border-left: none;
             cursor: pointer;
         }
 
         form.example button:hover {
-            background: #0b7dda;
+            background: #1f7a8c;
         }
 
         form.example::after {
             content: "";
             clear: both;
             display: table;
+            color: #1f7a8c;
         }
 
 
@@ -78,7 +85,7 @@
             text-align: center;
             transition: transform 0.6s;
             transform-style: preserve-3d;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px 0 #1f7a8c;
         }
 
         .flip-card:hover .flip-card-inner {
@@ -100,7 +107,7 @@
         }
 
         .flip-card-back {
-            background-color: rgb(240, 98, 41);
+            background-color: #022b3a;
             color: white;
             transform: rotateY(180deg);
         }
@@ -114,9 +121,11 @@
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Locaf</a>
+            <a class="navbar-brand container2" href="index.html">
+                <img class="logo" alt="hello" src="images/logo.png">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -127,16 +136,16 @@
                         <a class="nav-link active" aria-current="page" href="main.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aboutus.html">About Us</a>
+                        <a class="nav-link active" href="aboutus.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Search.html">Search</a>
+                        <a class="nav-link active" href="Search.html">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Profile</a>
+                        <a class="nav-link active" href="profile.html">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Parsa</a>
+                        <a class="nav-link active " href="login.html">Login/Signup</a>
                     </li>
                 </ul>
             </div>
@@ -150,7 +159,7 @@
     </form>
     <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
         <input type="text" name="search" placeholder="Search..">
-        <button class="btn btn-outline-secondary" style="background-color: grey;" type="button"><svg
+        <button class="btn btn-outline-secondary" style="background-color: #1f7a8c; color:#bfdbf7 ;" type="button"><svg
                 xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-search"
                 viewBox="0 0 16 16">
                 <path
@@ -164,8 +173,9 @@
     </br>
 
     <div class="d-grid gap-2 col-4 mx-auto">
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-            aria-expanded="false" aria-controls="collapseExample">
+        <button class="btn btn-primary" style="color:#bfdbf7 ; background-color: #1f7a8c;" type="button"
+            data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
+            aria-controls="collapseExample">
             Preferences ▼
         </button>
         <div class="collapse" id="collapseExample">
@@ -174,19 +184,19 @@
                     aria-label="Basic checkbox toggle button group">
 
                     <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                    <label class="btn btn-outline-primary" style="background-color:rgb(25, 25, 68)"
+                    <label class="btn btn-outline-primary" style="background-color:#022b3a; "
                         for="btncheck1">Quiet</label>
 
                     <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                    <label class="btn btn-outline-primary" style="background-color: rgb(25, 25, 68);"
+                    <label class="btn btn-outline-primary" style="background-color: #022b3a;"
                         for="btncheck2">Wifi</label>
 
                     <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                    <label class="btn btn-outline-primary" style="background-color: rgb(25, 25, 68);"
+                    <label class="btn btn-outline-primary" style="background-color: #022b3a;"
                         for="btncheck3">Coffee</label>
 
                     <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-                    <label class="btn btn-outline-primary" style="background-color: rgb(25, 25, 68);"
+                    <label class="btn btn-outline-primary" style="background-color: #022b3a;"
                         for="btncheck4">Food</label>
                 </div>
             </div>
