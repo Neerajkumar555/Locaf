@@ -16,7 +16,7 @@
     <!-- Optional styles and scripts of your own bfdbf7 1f7a8c 022b3a e1e5f2-->
 
     <link rel="stylesheet" href="styles/navbar.css">
-    
+
 </head>
 
 <body>
@@ -58,24 +58,29 @@
 
     <div class="container">
         <h4>Location details Form</h4>
-        <form action="./submit.html">
-            <fieldset>
-                <label>Name: </label>
-                <input type="text" id="username" name="username" placeholder="Username" pattern=[a-zA-Z]{8,20} required="required" autofocus="autofocus">
-                <br/>
-                <label>Adress: </label>
-                <input type="password" id="password" name="password" placeholder="Password" pattern=[a-zA-Z0-9]{10,20} required="required">
-                <br/>
-                <label>Description: </label><input type="text" id="age" name="age"  placeholder="Description">
-                <br/>
-                <br/>
-                <input type="submit" id="submit" name="submit">
-                <input type="reset" id="reset" name="reset">
-            </fieldset>
-        </form>
-    </div>
-    
+        <div class="wrapper">
+            <form class="form">
+                <fieldset>
+                    <label>Name: </label>
+                    <input type="text" id="username" name="username" placeholder="Username" pattern=[a-zA-Z]{8,20}
+                        required="required" autofocus="autofocus">
+                    <br />
+                    <label>Address: </label>
+                    <input type="password" id="password" name="password" placeholder="Password"
+                        pattern=[a-zA-Z0-9]{10,20} required="required">
+                    <br />
+                    <label>Description: </label><input type="text" id="age" name="age" placeholder="Description">
+                    <br />
+                    <br />
+                    <input type="submit" id="submit" value="submit" name="submit">
+                    <input type="reset" id="reset" name="reset">
+                </fieldset>
+            </form>
+        </div>
 
+    </div>
+
+    <script src="scripts/submitlocation.js"></script>
 
 
     <!----------------------------------------------->
