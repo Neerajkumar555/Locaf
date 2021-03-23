@@ -59,8 +59,7 @@
 
  var provider = new firebase.auth.FacebookAuthProvider();
 
- firebase
-  .auth()
+ firebase.auth()
   .signInWithPopup(provider)
   .then((result) => {
     /** @type {firebase.auth.OAuthCredential} */

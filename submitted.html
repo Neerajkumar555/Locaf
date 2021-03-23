@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>login</title>
+    <title>My BCIT Project</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -13,22 +13,30 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 
-    <!-- Optional styles and scripts of your own -->
-    <link rel="stylesheet" href="styles/navbar.css">
-
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
-
+    <!-- Optional styles and scripts of your own bfdbf7 1f7a8c 022b3a e1e5f2-->
     <style>
-        .contain                   {
-        background-image: url("./images/laptop_office_desk.jpg");
-        
-    }
-    .text_color{
-        color:white;
-        
-    }
+        body {
+            background-color: #e1e5f2;
+            color: #022b3a;
+        }
 
+        .navbar {
+            background-color: #022b3a;
+            color: #e1e5f2;
+        }
+
+        .login {
+            float: right;
+        }
+        .logo {
+            width: 100%;
+            height: auto;
+        }
+        .container2 {
+            width: 7%;
+        }
     </style>
+
 </head>
 
 <body>
@@ -68,13 +76,11 @@
         </div>
     </nav>
 
-    <div class="contain">
-        <h1 class="text_color">Welcome to Locaf<br>
-            <page/h1> <h1>Lets get you logged in...<br>
-        </h1>
-        <div id="firebaseui-auth-container"></div>
-        <div id="loader">Loading...</div>
+    <div class="container">
+        <h1 class="display-4">Location submitted!</h1>
     </div>
+    
+
 
 
     <!----------------------------------------------->
@@ -83,23 +89,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script> -->
-    
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-
-     <!-- Link to the api keys for your firebase project -->
-     <script src="scripts/firebase_login.js"></script>
-     
 
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-    <script src="scripts/user_authentication.js"></script>
-    
-       
+
+    <nav class="navbar fixed-bottom navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Locaf Footer</a>
+        </div>
+    </nav>
 </body>
 
 </html>
