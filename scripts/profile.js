@@ -22,22 +22,3 @@ function sayHello() {
 sayHello();
 
 
-function citiesQuery(){
-    db.collection("cities")
-    .where("population", ">", 1000000)
-    //.where("hemisphere", "==", "south")
-    //.limit(2)
-    //.orderBy("population")
-    //.orderBy("population", "desc")
-    .get()
-    .then(function(snap){
-        snap.forEach(function(doc){
-            var n = doc.data().name;
-            var pop = doc.data().population;
-            console.log(n);
-            var newdom = "<p> " + n + " " + pop + "</p>";
-            $("#cities-go-here").append(newdom);
-            //document.getElementById("cities-go-here").innerHTML = newdom;
-        })
-    })
-}
