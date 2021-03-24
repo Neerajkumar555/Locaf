@@ -40,4 +40,4 @@ function submitLocation() {
         }, 1000);
     })
 }
-submitMyLocation();
+submitLocation();
