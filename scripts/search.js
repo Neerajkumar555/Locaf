@@ -16,3 +16,19 @@ function mylocation(){
     })
 }
 submitMyLocation(); 
+
+// try this ..
+
+function getlocation(){
+    db.collection("locationss")
+    .get()
+    .then(function(snap){
+        snap.forEach(function(doc){
+            var n = doc.data().name;
+            var add = doc.data().adress;
+            console.log(n);
+            $("#my-address").text(add);
+        })
+    })
+}
+getlocation();
