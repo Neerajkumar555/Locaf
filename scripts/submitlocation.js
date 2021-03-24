@@ -34,10 +34,9 @@ function submitLocation() {
                 lotraffic: pref[4]
             })
         })
-
         setTimeout(function () {
             window.location.assign("submitted.html"); //re-direct to main.html after signup
         }, 1000);
     })
 }
-submitMyLocation();
+submitLocation();
