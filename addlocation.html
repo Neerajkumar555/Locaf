@@ -15,10 +15,52 @@
 
     <!-- Optional styles and scripts of your own bfdbf7 1f7a8c 022b3a e1e5f2-->
     <style>
-        #preferences input, #preferences label {
+        input, label {
+            display: inline-block;
+            margin: 1%;
+        }
+        body {
+            height: 100%;
+        }
+        .container {
+            background-image: url(/images/greycafe.jpg);
+            width: 96vw;
+            height: auto;
+            padding-bottom: 10%;
+        }
+        .wrapper {
+            width: 90%;
+            background-color: white;
+            border-radius: 5%;
+            border: blue solid 2px;
+            margin: 5%;
+            font-size: large;
+        }
+        .wrapper div {
+            margin: 5%;
+        }
+        #buttondiv {
+            text-align: center;
+        }
+        #submit {
+            border-radius: 15%;
+        }
+        .inputtext {
+            border: none;
+            border-bottom: 2px solid lightgrey;
+            width: 95%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+        .header {
+            margin: 5%;
+        }
+        h4 {
+            font-size: 2rem;
+        }
+        #loadedPic {
             display: inline-block;
         }
-
     </style>
     <link rel="stylesheet" href="styles/navbar.css">
 
@@ -62,19 +104,20 @@
     </nav>
 
     <div class="container">
-        <h4>Location details Form</h4>
         <br/>
         <div class="wrapper">
-            <label>Name: </label>
-            <input type="text" id="name" name="name" placeholder="name" required="required" autofocus="autofocus">
-            <br/>
-            <label>Description: </label>
-            <input type="text" id="description" name="description" placeholder="description">
-            <br/>
-            <label>Google Map Link: </label>
-            <input type="text" id="address" name="address" placeholder="address" required="required">
-            <br/>
-            <label>Attributes: </label>
+            <h4 class="header">Submit a Location</h4>
+            <div>
+                <input class="inputtext" type="text" id="name" name="name" placeholder="Name" required="required" autofocus="autofocus">
+                <br/>
+                <input class="inputtext" type="text" id="description" name="description" placeholder="Description">
+                <br/>
+                <input class="inputtext" type="text" id="address" name="address" placeholder="Address" required="required">
+                <br/>
+            </div>
+            <div>
+                <label class="header" id="preferences">What environment does this location have? (select all that apply)</label>
+                <br/>
                 <input type="checkbox" class="btn-check" id="quiet" autocomplete="off">
                 <label class="btn btn-outline-primary" for="quiet">Quiet</label>
                 <input type="checkbox" class="btn-check" id="lively" autocomplete="off">
@@ -85,10 +128,18 @@
                 <label class="btn btn-outline-primary" for="fooddrink">Food & Drink</label>
                 <input type="checkbox" class="btn-check" id="lotraffic" autocomplete="off">
                 <label class="btn btn-outline-primary" for="lotraffic">Low Traffic</label>
-            <br/>
-            <button id="submit">Submit</button>
+            </div>
+            <div>
+                <label class="header">Do you have any photos of the location? If so, please upload them below:</label>
+                <div>
+                    <img id="loadedPic" src="images/coffeecup.png" width=50 height=50/>
+                    <input type="file" id="upload" accept="image/*"/>
+                </div>
+            </div>
+            <div id="buttondiv">
+                <button id="submit">Submit</button>
+            </div>
         </div>
-
     </div>
 
 
@@ -103,9 +154,10 @@
     </script>
 
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
 
     <script src="/scripts/firebase_login.js"></script>
     <!--------------------------------------------------------------------->
@@ -113,11 +165,6 @@
     <!--------------------------------------------------------------------->
 
     <script src="/scripts/submitlocation.js"></script>
-    <nav class="navbar fixed-bottom navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Locaf Footer</a>
-        </div>
-    </nav>
 </body>
 
 </html>
