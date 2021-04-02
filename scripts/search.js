@@ -61,15 +61,6 @@ function showMyRestaurants() {
                     // lowers check magnitude by one
                     check--;
                 }
-                //var asdf = 1;
-
-                // prints out every document in order of most relevant to least
-                // outputArray.forEach(function (doc) {
-                //     //console.log(asdf++);
-                //     //console.log(doc.data());
-                //     displayLoc(doc);
-                // })
-
             })
     })
 }
