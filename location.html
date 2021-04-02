@@ -176,6 +176,9 @@
                     <li class="nav-item">
                         <a class="nav-link active " href="login.html">Login/Signup</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " href="addlocation.html">Add Location</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -217,9 +220,9 @@
                     <img id="storefrontimg" alt="storefront image" src="https://dummyimage.com/1080x720/000/fff">
                 </div>
                 <div id="bannerinfo">
-                    <h1>location name</h1>
-                    <h5>location address</h5>
-                    <p>some attribute tags of the location</p>
+                    <h1 id="locaname">location name</h1>
+                    <h5 id="locaaddress">location address</h5>
+                    <div id="attribute">some attribute tags of the location</div>
                     <p>maybe some diff buttons here</p>
                 </div>
             </div>
@@ -274,18 +277,12 @@
                             <img src="images/7.png" class="card-img" alt="...">
                             <div class="card-img-overlay">
                                 <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p>
                             </div>
                         </div>
                         <div class="card text-white">
                             <img src="images/CafeLaptop.jpg" class="card-img" alt="...">
                             <div class="card-img-overlay">
                                 <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p>
                             </div>
                         </div>
                     </div>
@@ -294,18 +291,12 @@
                             <img src="images/logo-tim-hortons.png" class="card-img" alt="...">
                             <div class="card-img-overlay">
                                 <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p>
                             </div>
                         </div>
                         <div class="card text-white">
                             <img src="images/mapss.png" class="card-img" alt="...">
                             <div class="card-img-overlay">
                                 <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p>
                             </div>
                         </div>
                     </div>
@@ -314,18 +305,12 @@
                             <img src="images/TableBook.jpg" class="card-img" alt="...">
                             <div class="card-img-overlay">
                                 <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p>
                             </div>
                         </div>
                         <div class="card text-white">
                             <img src="images/f3805cbb9c45c2ad8e12fea81af79f29.png" class="card-img" alt="...">
                             <div class="card-img-overlay">
                                 <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p>
                             </div>
                         </div>
                     </div>
@@ -337,18 +322,26 @@
     </div>
 
 
-
-
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
     <!----------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
 
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+    <script src="/scripts/firebase_login.js"></script>
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
+
+    <script src="/scripts/load_location_info.js"></script>
 
 </body>
 

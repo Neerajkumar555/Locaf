@@ -12,6 +12,8 @@
         /* The width is the width of the web page */
       }
     </style>
+
+
     <script>
       // Initialize and add the map
       function initMap() {
@@ -19,7 +21,7 @@
         const uluru = { lat: 49.25076313248947, lng: -123.0017895306895 };
         // The map, centered at Uluru
         const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 4,
+          zoom: 13,
           center: uluru,
         });
         // The marker, positioned at Uluru
@@ -30,6 +32,8 @@
       }
       
     </script>
+
+    
   </head>
   <body>
     <h3>My Google Maps Demo</h3>
@@ -41,5 +45,17 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGmThR4ueZR8MqgbX6ebi474e8h6XYIAw&callback=initMap&libraries=&v=weekly"
       async
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+    <script src="/scripts/firebase_login.js"></script>
   </body>
 </html>
