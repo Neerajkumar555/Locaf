@@ -12,7 +12,8 @@ function uploadPhoto(user, file, entry) {
             storageRef.getDownloadURL()
                 .then(function (url) { // Get URL of the uploaded file   
                     entry.collection("photos").doc().set({ // Save the URL into users collection
-                            "photoURL": url
+                            "photoURL": url,
+                            "submitBy": user.displayName
                         })
                         .then(function () {
                             console.log('Added photo URL to Firestore.');
