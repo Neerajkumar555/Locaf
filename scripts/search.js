@@ -23,9 +23,6 @@ function showMyRestaurants() {
                 // To iterate through
                 var locationsArray = [];
 
-                // Sorted locations to output
-                var outputArray = [];
-
                 // moving every document into the array
                 search.forEach(function (doc) {
                     locationsArray.push(doc);
@@ -35,19 +32,21 @@ function showMyRestaurants() {
                 // max rating a location can have
                 var check = 15;
 
-                // counter for how many total checks it has done
-                var boop = 0;
                 while (locationsArray.length > 0 && check >= 0) {
 
                     // array of indexes to remove
                     var toRemove = []
                     for (i = 0; i < locationsArray.length; i++) {
+
+                        // the current location matching magnitude to compare
                         var current = x(locationsArray[i], userpref);
                         //console.log(boop++);
                         console.log("checking for " + check + " versus " + current + " at: " + locationsArray[i].data().name)
+
+                        // if values match, then display result
                         if (current == check) {
                             console.log("match!");
-                            outputArray.push(locationsArray[i]);
+                            displayLoc(locationsArray[i]);
                             toRemove.push(i);
                         }
                     }
@@ -65,12 +64,11 @@ function showMyRestaurants() {
                 //var asdf = 1;
 
                 // prints out every document in order of most relevant to least
-                outputArray.forEach(function (doc) {
-                    //console.log(asdf++);
-                    //console.log(doc.data());
-                    var orderNo = 1;
-                    displayLoc(doc);
-                })
+                // outputArray.forEach(function (doc) {
+                //     //console.log(asdf++);
+                //     //console.log(doc.data());
+                //     displayLoc(doc);
+                // })
 
             })
     })
