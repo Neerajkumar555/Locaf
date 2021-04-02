@@ -22,14 +22,14 @@
 function getlocation(){
     db.collection("locations")
     .get()
-    .then(function(snap){
-        snap.forEach(function(doc){
+    .then(function(doc){
+        doc.forEach(function(doc){
             var n = doc.data().name;
             var add = doc.data().address;
             console.log(n);
             var text = document.createElement("p");
             text.innerHTML = (n + " " + add);
-            $("#my-address").append(text);
+            $("#my-address").append(add);
         })
     })
 }

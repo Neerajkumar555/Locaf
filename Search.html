@@ -158,7 +158,7 @@
 
     </form>
     <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
-        <input type="text" name="search" placeholder="Search..">
+        <input id="myInput" onkeyup="myFunction()" type="text" name="search" placeholder="Search..">
         <button class="btn btn-outline-secondary" style="background-color: #1f7a8c; color:#bfdbf7 ;" type="button"><svg
                 xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-search"
                 viewBox="0 0 16 16">
@@ -209,107 +209,165 @@
     </br>
     </br>
 
+    <table id="myTable">
+        <div class="row">
+            <tr>
+                <td>
+                    <div class="column">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="images/1200px-Starbucks_Corporation_Logo_2011.svg.png" alt="Avatar"
+                                        style="width:300px;height:300px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>Starbuck's</h1>
+                                    <p>Coffee Shop</p>
+                                    <p>★★★★☆</p>
+                                    <p>$$</p>
+                                    <p>Address</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="column">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="images/4YN-wgFI_400x400.jpg" alt="Avatar"
+                                        style="width:300px;height:300px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>Tim Horton's</h1>
+                                    <p>Coffee Shop</p>
+                                    <p>★★★★☆</p>
+                                    <p>$</p>
+                                    <p>Address</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="column">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="images/f3805cbb9c45c2ad8e12fea81af79f29.png" alt="Avatar"
+                                        style="width:300px;height:300px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>Parsa's</h1>
+                                    <p>Coffee Shop</p>
+                                    <p>★★★☆☆</p>
+                                    <p>$$</p>
+                                    <p>Address</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="column">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="images/logo.svg" alt="Avatar" style="width:300px;height:300px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>Wave Coffee</h1>
+                                    <p>Coffee Shop</p>
+                                    <p>★★★★☆</p>
+                                    <p>$</p>
+                                    <p>Address</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="column">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="images/mc.jpg" alt="Avatar" style="width:300px;height:300px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>McDonald's</h1>
+                                    <p>Fast Food Restaurants</p>
+                                    <p>★★★☆☆</p>
+                                    <p>$</p>
+                                    <p>Address</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="column">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="images/7.png" alt="Avatar" style="width:300px;height:300px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>Seven-eleven</h1>
+                                    <p>Food Store</p>
+                                    <p>★★☆☆☆</p>
+                                    <p>$</p>
+                                    <p>Address</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </div>
+    </table>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 
-    <div class="row">
-        <div class="column">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="images/1200px-Starbucks_Corporation_Logo_2011.svg.png" alt="Avatar"
-                            style="width:300px;height:300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>Starbuck's</h1>
-                        <p>Coffee Shop</p>
-                        <p>★★★★☆</p>
-                        <p>$$</p>
-                        <p>Address</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="images/4YN-wgFI_400x400.jpg" alt="Avatar" style="width:300px;height:300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>Tim Horton's</h1>
-                        <p>Coffee Shop</p>
-                        <p>★★★★☆</p>
-                        <p>$</p>
-                        <p>Address</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="images/f3805cbb9c45c2ad8e12fea81af79f29.png" alt="Avatar"
-                            style="width:300px;height:300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>Parsa's</h1>
-                        <p>Coffee Shop</p>
-                        <p>★★★☆☆</p>
-                        <p>$$</p>
-                        <p>Address</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="images/logo.svg" alt="Avatar" style="width:300px;height:300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>Wave Coffee</h1>
-                        <p>Coffee Shop</p>
-                        <p>★★★★☆</p>
-                        <p>$</p>
-                        <p>Address</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="images/mc.jpg" alt="Avatar" style="width:300px;height:300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>McDonald's</h1>
-                        <p>Fast Food Restaurants</p>
-                        <p>★★★☆☆</p>
-                        <p>$</p>
-                        <p>Address</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="images/7.png" alt="Avatar" style="width:300px;height:300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>Seven-eleven</h1>
-                        <p>Food Store</p>
-                        <p>★★☆☆☆</p>
-                        <p>$</p>
-                        <p>Address</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <table id="myTable">
+        <tr class="header">
+            <th style="width:60%;">Name</th>
+            <th style="width:40%;">Country</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Berglunds snabbkop</td>
+            <td>Sweden</td>
+        </tr>
+        <tr>
+            <td>Island Trading</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Koniglich Essen</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Canada</td>
+        </tr>
+        <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Italy</td>
+        </tr>
+        <tr>
+            <td>North/South</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Paris specialites</td>
+            <td>France</td>
+        </tr>
+    </table>
 
 
     <!----------------------------------------------->
@@ -330,7 +388,26 @@
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 
 </body>
 
