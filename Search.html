@@ -158,8 +158,8 @@
 
     </form>
     <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
-        <input type="text" name="search" placeholder="Search..">
-        <button class="btn btn-outline-secondary" style="background-color: #1f7a8c; color:#bfdbf7 ;" type="button"><svg
+        <input id="searchbar" type="text" name="search" placeholder="Search..">
+        <button id="searchbutt" class="btn btn-outline-secondary" style="background-color: #1f7a8c; color:#bfdbf7 ;" type="button"><svg
                 xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-search"
                 viewBox="0 0 16 16">
                 <path
@@ -209,6 +209,10 @@
     </br>
     </br>
 
+        <!-- Results get appended here -->
+    <div id="results">
+
+    </div>
 
     <div class="row">
         <div class="column">
@@ -326,7 +330,6 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
 
-    <script src="/scripts/firebase_login.js"></script>
     <script src="/scripts/firebase_login.js"></script>
     <script src="/scripts/search.js"></script>
     <!--------------------------------------------------------------------->
