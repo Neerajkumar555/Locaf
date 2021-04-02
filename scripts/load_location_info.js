@@ -2,11 +2,12 @@ const locaname = document.getElementById("locaname");
 const locaaddress = document.getElementById("locaaddress");
 const locaattrib = document.getElementById("attribute");
 const locaID = getId2();
+
 // Dependent on getting document info from results page
-function getId2(){
-    var myobj = JSON.parse(localStorage.getItem('locationid'));    
+function getId2() {
+    var id = JSON.parse(localStorage.getItem('locationid'));    
     console.log(myobj);
-    return myobj;
+    return id;
 }
 
 function loadInfo() {
