@@ -41,9 +41,9 @@ function submitLocation() {
         })
         submitButton.addEventListener('click', function () {
 
-            var xname = document.getElementById('name').value;
-            var xaddress = document.getElementById('address').value;
-            var xdescription = document.getElementById('description').value;
+            var xname = document.getElementById('name').value.toLowerCase();
+            var xaddress = document.getElementById('address').value.toLowerCase();
+            var xdescription = document.getElementById('description').value.toLowerCase();
 
             var xquiet = Number(document.getElementById('quiet').checked);
             var xlively = Number(document.getElementById('lively').checked);

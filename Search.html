@@ -158,15 +158,14 @@
 
     </form>
     <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
-        <input id="myInput" onkeyup="myFunction()" type="text" name="search" placeholder="Search..">
-        <button class="btn btn-outline-secondary" style="background-color: #1f7a8c; color:#bfdbf7 ;" type="button"><svg
+        <input id="searchbar" type="text" name="search" placeholder="Search..">
+        <button id="searchbutt" class="btn btn-outline-secondary" style="background-color: #1f7a8c; color:#bfdbf7 ;" type="button"><svg
                 xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-search"
                 viewBox="0 0 16 16">
                 <path
                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
             </svg>
         </button>
-
     </form>
     </br>
     </br>
@@ -209,6 +208,67 @@
     </br>
     </br>
 
+        <!-- Results get appended here -->
+    <div id="results">
+
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/1200px-Starbucks_Corporation_Logo_2011.svg.png" alt="Avatar"
+                            style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Starbuck's</h1>
+                        <p>Coffee Shop</p>
+                        <p>★★★★☆</p>
+                        <p>$$</p>
+                        <p>Address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/4YN-wgFI_400x400.jpg" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Tim Horton's</h1>
+                        <p>Coffee Shop</p>
+                        <p>★★★★☆</p>
+                        <p>$</p>
+                        <p>Address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/f3805cbb9c45c2ad8e12fea81af79f29.png" alt="Avatar"
+                            style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Parsa's</h1>
+                        <p>Coffee Shop</p>
+                        <p>★★★☆☆</p>
+                        <p>$$</p>
+                        <p>Address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/logo.svg" alt="Avatar" style="width:300px;height:300px;">
     <table id="myTable">
         <div class="row">
             <tr>
@@ -346,7 +406,6 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
 
-    <script src="/scripts/firebase_login.js"></script>
     <script src="/scripts/firebase_login.js"></script>
     <script src="/scripts/search.js"></script>
     <!--------------------------------------------------------------------->
