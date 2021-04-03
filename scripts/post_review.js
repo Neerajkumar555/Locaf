@@ -1,6 +1,17 @@
+
+// Dependent on getting document info from results page
+function getId2() {
+    var id = JSON.parse(localStorage.getItem('locationid'));    
+    console.log(myobj);
+    return id;
+}
+///function to post review to db
+
 function postreview() {
     document.getElementById('post').addEventListener('click', function () {
             var rating;
+            //getiing the rating and review details
+
             var text = document.getElementById('writereview').value;
             var star5 = document.getElementById('star-5').checked;
             var star4 = document.getElementById('star-4').checked;
@@ -22,13 +33,14 @@ function postreview() {
             console.log(rating);
             firebase.auth().onAuthStateChanged(function (user) {
                 var locationRef = db.collection('locations');
-                var reviewref = locationRef.doc().collection('reviews');
+                var reviewref = locationRef.doc('ZFN9SLHqssPHqZN3rXio').collection('reviews');
                 reviewref.doc().set({
                     postedby: user.displayName,
                     reviewrating: rating,
                     reviewdetails:text
                 })
             })
+            console.log("review posted!!");
             })
         
     }
