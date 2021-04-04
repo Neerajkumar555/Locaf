@@ -66,6 +66,7 @@ function showMyRestaurants() {
 }
 showMyRestaurants();
 
+
 // displays a location when given a document
 function displayLoc(doc) {
     var name = doc.data().name;
@@ -74,8 +75,9 @@ function displayLoc(doc) {
     var id = doc.id;
 
     // creates dom element to display in the page and appends to 'results' div
-    var newLocation = $('<p id="' + id + '">' + outputcount++ + ". " + name + address + description + '</p>');
+    var newLocation = $('<p class="link" id="' + id + '">' + outputcount++ + ". " + name + address + description + '</p>');
     $('#results').append(newLocation);
+    clickResult(id);
 }
 
 // sets the magnitude of how much the location matches the search + preferences
@@ -105,3 +107,15 @@ function x(doc, userpref) {
 
 // LETS GO I DID IT WOO
 // oscar was here
+
+// redirects to the location clicked and has data stored in both URL and localstorage
+function clickResult(locaid) {
+    var location = document.getElementById(locaid);
+    location.addEventListener('click', function() {
+        var id = {
+            "id": locaid
+        }
+        localStorage.setItem('locationid', JSON.stringify(id));
+        window.location.href = "location.html" + "?" + locaid;
+    })
+}
