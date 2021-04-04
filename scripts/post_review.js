@@ -1,8 +1,9 @@
+var locaID = getId();
 
 // Dependent on getting document info from results page
-function getId2() {
-    var id = JSON.parse(localStorage.getItem('locationid'));    
-    console.log(myobj);
+function getId() {
+    var id = JSON.parse(localStorage.getItem('locationid')).id;    
+    console.log(id);
     return id;
 }
 ///function to post review to db
@@ -33,7 +34,7 @@ function postreview() {
             console.log(rating);
             firebase.auth().onAuthStateChanged(function (user) {
                 var locationRef = db.collection('locations');
-                var reviewref = locationRef.doc('ZFN9SLHqssPHqZN3rXio').collection('reviews');
+                var reviewref = locationRef.doc(locaID).collection('reviews');
                 reviewref.doc().set({
                     postedby: user.displayName,
                     reviewrating: rating,
@@ -42,7 +43,5 @@ function postreview() {
             })
             console.log("review posted!!");
             })
-        
     }
-
     postreview();
