@@ -1,0 +1,423 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>search</title>
+    <meta name="comp1800 boilerplate code" content="Search">
+    <meta name="author" content="BCIT">
+
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <script src="https://kit.fontawesome.com/639661f4ad.js" crossorigin="anonymous"></script>
+    <!-- Optional styles and scripts of your own -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        /* Create three equal columns that sits next to each other */
+        .column {
+            flex: 30%;
+            padding: 70px;
+        }
+
+
+
+        form.example input[type=text] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid #1f7a8c;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+        }
+
+        form.example button {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            background: #bfdbf7;
+            color: #022b3a;
+            font-size: 17px;
+            border: 1px solid #022b3a;
+            border-left: none;
+            cursor: pointer;
+        }
+
+        form.example button:hover {
+            background: #1f7a8c;
+        }
+
+        form.example::after {
+            content: "";
+            clear: both;
+            display: table;
+            color: #1f7a8c;
+        }
+
+
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 #1f7a8c;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        .flip-card-back {
+            background-color: #022b3a;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #022b3a;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .main {
+            margin-left: 160px;
+            /* Same as the width of the sidenav */
+            font-size: 28px;
+            /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+
+            .sidebar {
+                float: left;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-------------------------------------->
+    <!-- The following is HTML for layout -->
+    <!-------------------------------------->
+    <!-- Header Navigation Bar -->
+
+    <div class="sidenav">
+        <div class="sidebar">
+            <div class="card card-body" style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">
+                <h5>Environment</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Quiet
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Outdoor seats
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Wifi
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Washroom
+                    </label>
+                </div>
+            </div>
+            </br>
+            </br>
+            &nbsp;
+            &nbsp;
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary"
+                    style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">$</button>
+                <button type="button" class="btn btn-primary"
+                    style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">$$</button>
+                <button type="button" class="btn btn-primary"
+                    style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">$$$</button>
+            </div>
+            </br>
+            </br>
+
+            <div class="card card-body" style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">
+                <h5>Food</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Sandwich
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Coffee Shop
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Pizza
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Italian
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Burger
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand container2" href="index.html">
+                    <img class="logo" alt="hello" src="images/logo.png">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="aboutus.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Search.html">Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="profile.html">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active " href="login.html">Login/Signup</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        </br>
+        </br>
+
+
+        </form>
+        <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+            <input id="searchbar" type="text" name="search" placeholder="Search..">
+            <button id="searchbutt" class="btn btn-outline-secondary" style="background-color: #1f7a8c; color:#bfdbf7 ;"
+                type="button"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor"
+                    class="bi bi-search" viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </button>
+        </form>
+        </br>
+        </br>
+        </br>
+
+        <div class="d-grid gap-2 col-4 mx-auto">
+            <button class="btn btn-primary" style="color:#bfdbf7 ; background-color: #1f7a8c;" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
+                aria-controls="collapseExample">
+                Preferences ▼
+            </button>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <div class="d-grid gap-2 col-3 mx-auto btn-group" role="group"
+                        aria-label="Basic checkbox toggle button group">
+
+                        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                        <label class="btn btn-outline-primary" style="background-color:#022b3a; "
+                            for="btncheck1">Quiet</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                        <label class="btn btn-outline-primary" style="background-color: #022b3a;"
+                            for="btncheck2">Wifi</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                        <label class="btn btn-outline-primary" style="background-color: #022b3a;"
+                            for="btncheck3">Coffee</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                        <label class="btn btn-outline-primary" style="background-color: #022b3a;"
+                            for="btncheck4">Food</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>The locations near <span id="my-address"></span></h3>
+
+        </br>
+        </br>
+        </br>
+        </br>
+
+        <!-- Results get appended here -->
+        <div id="results">
+
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/1200px-Starbucks_Corporation_Logo_2011.svg.png" alt="Avatar"
+                                style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>Starbuck's</h1>
+                            <p>Coffee Shop</p>
+                            <p>★★★★☆</p>
+                            <p>$$</p>
+                            <p>Address</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/4YN-wgFI_400x400.jpg" alt="Avatar" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>Tim Horton's</h1>
+                            <p>Coffee Shop</p>
+                            <p>★★★★☆</p>
+                            <p>$</p>
+                            <p>Address</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/f3805cbb9c45c2ad8e12fea81af79f29.png" alt="Avatar"
+                                style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>Parsa's</h1>
+                            <p>Coffee Shop</p>
+                            <p>★★★☆☆</p>
+                            <p>$$</p>
+                            <p>Address</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!----------------------------------------------->
+            <!-- JS: Boostrap, Firebase, API related    -->
+            <!----------------------------------------------->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+                crossorigin="anonymous">
+            </script>
+
+            <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+            <script src="/scripts/firebase_login.js"></script>
+            <script src="/scripts/search.js"></script>
+            <!--------------------------------------------------------------------->
+            <!-- JS files: Your own JavaScript functions included here    -->
+            <!--------------------------------------------------------------------->
+        </div>
+</body>
+
+</html>
