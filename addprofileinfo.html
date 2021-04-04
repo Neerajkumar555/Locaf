@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My BCIT Project</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <meta name="author" content="BCIT">
+
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+    <!-- Optional styles and scripts of your own bfdbf7 1f7a8c 022b3a e1e5f2-->
+    <style>
+        input, label {
+            display: inline-block;
+            margin: 1%;
+        }
+        body {
+            height: 100%;
+        }
+        .container {
+            background-image: url(/images/greycafe.jpg);
+            width: 96vw;
+            height: auto;
+            padding-bottom: 10%;
+        }
+        .wrapper {
+            width: 90%;
+            background-color: white;
+            border-radius: 5%;
+            border: blue solid 2px;
+            margin: 5%;
+            font-size: large;
+        }
+        .wrapper div {
+            margin: 5%;
+        }
+        #buttondiv {
+            text-align: center;
+        }
+        #submit {
+            border-radius: 15%;
+        }
+        .inputtext {
+            border: none;
+            border-bottom: 2px solid lightgrey;
+            width: 95%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+        .header {
+            margin: 5%;
+        }
+        h4 {
+            font-size: 2rem;
+        }
+        #loadedPic {
+            display: inline-block;
+        }
+    </style>
+    <link rel="stylesheet" href="styles/navbar.css">
+
+</head>
+
+<body>
+
+    <!-------------------------------------->
+    <!-- The following is HTML for layout -->
+    <!-------------------------------------->
+    <!-- Header Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand container2" href="index.html">
+                <img class="logo" alt="hello" src="images/logo.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Search.html">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " href="login.html">Login/Signup</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br/>
+        <div class="wrapper">
+            <h4 class="header">Extra Profile Information</h4>
+            <div>
+                <input class="inputtext" type="text" id="name" name="name" placeholder="Name" required="required" autofocus="autofocus">
+                <br/>
+                <input class="inputtext" type="text" id="description" name="description" placeholder="Description">
+                <br/>
+                <input class="inputtext" type="text" id="Number" name="Number" placeholder="Number" required="required">
+                <br/>
+            </div>
+            <div id="buttondiv">
+                <button id="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related    -->
+    <!----------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+    <script src="/scripts/firebase_login.js"></script>
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+
+    <script src="/scripts/profile.js"></script>
+</body>
+
+</html>
