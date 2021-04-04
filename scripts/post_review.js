@@ -42,6 +42,9 @@ function postreview() {
                 })
             })
             console.log("review posted!!");
+            setTimeout(function () {
+                window.location.assign("submitted.html?review"); //re-direct to main.html after signup
+             }, 1000);
             })
     }
     postreview();
