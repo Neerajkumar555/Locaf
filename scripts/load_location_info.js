@@ -1,19 +1,17 @@
 const locaname = document.getElementById("locaname");
 const locaaddress = document.getElementById("locaaddress");
 const locaattrib = document.getElementById("attribute");
-const locaID = getId2();
+const locaID = getId();
 
 // Dependent on getting document info from results page
-function getId2() {
-    var id = JSON.parse(localStorage.getItem('locationid'));    
-    console.log(myobj);
+function getId() {
+    var id = JSON.parse(localStorage.getItem('locationid')).id;    
+    console.log(id);
     return id;
 }
 
 function loadInfo() {
-    db.collections("locations")
-    .doc(locaID)
-    .get()
+    db.collection("locations").doc(locaID).get()
     .then(function(info) {
         var n = info.data().name;
         var a = info.data().address;
@@ -24,7 +22,7 @@ function loadInfo() {
         //locaattribute.innerHTML = p;
     })
 }
-//loadInfo();
+loadInfo();
 
 function loadPhotos() {
     document.getElementById("pills-photos-tab").addEventListener('click', function() {
