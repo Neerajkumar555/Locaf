@@ -65,7 +65,7 @@ function getReview() {
         }
     });
 }
-getreview();
+getReview();
 
 function uploadUserProfilePic() {
     
