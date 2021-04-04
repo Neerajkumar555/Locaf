@@ -70,36 +70,39 @@ function getavgrating() {
         .get()
         .then(function (snap) {
             snap.forEach(function (doc) {
-                console.log(doc.id);
                 ratingTotal += doc.data().reviewrating;
                 count++;
-
             })
             avg = parseInt(ratingTotal / count);
-            document.getElementById("avg_rtng").textContent += " "+avg;
-            switch (avg) {
-                case 1:
-                    var rating = document.getElementById("star-1");
-                    rating.checked = true;
-                    break;
-                case 2:
-                    var rating = document.getElementById("star-2");
-                    rating.checked = true;
-                    break;
-                case 3:
-                    var rating = document.getElementById("star-3");
-                    rating.checked = true;
-                    break;
-                case 4:
-                    var rating = document.getElementById("star-4");
-                    rating.checked = true;
-                    break;
-                case 5:
-                    var rating = document.getElementById("star-5");
-                    rating.checked = true;
-                    break;
-            }
-
+            displayrating(avg);
         })
 }
 getavgrating();
+
+function displayrating(avg){
+
+    document.getElementById("avg_rtng").textContent += " "+avg;
+    switch (avg) {
+        case 1:
+            var rating = document.getElementById("star-1");
+            rating.checked = true;
+            break;
+        case 2:
+            var rating = document.getElementById("star-2");
+            rating.checked = true;
+            break;
+        case 3:
+            var rating = document.getElementById("star-3");
+            rating.checked = true;
+            break;
+        case 4:
+            var rating = document.getElementById("star-4");
+            rating.checked = true;
+            break;
+        case 5:
+            var rating = document.getElementById("star-5");
+            rating.checked = true;
+            break;
+    }
+
+}
