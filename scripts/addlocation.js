@@ -68,7 +68,7 @@ function submitLocation() {
             
             console.log("Data was uploaded!")
             setTimeout(function () {
-               window.location.assign("submitted.html"); //re-direct to main.html after signup
+               window.location.assign("submitted.html?location"); //re-direct to main.html after signup
             }, 1000);
         })
     })
