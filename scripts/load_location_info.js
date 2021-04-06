@@ -24,36 +24,21 @@ function loadInfo() {
 }
 loadInfo();
 
+///function to display photos
+
 function loadPhotos() {
-    document.getElementById("pills-photos-tab").addEventListener('click', function () {
+   
         db.collection("locations").doc(locaID).collection("photos")
             .get()
             .then(function (snap) {
-                count = 0;
-
                 snap.forEach(function (doc) {
-                    var name = doc.data().submitBy;
                     var url = doc.data().photoURL;
-                    if (count % 3 == 0 || count == 0) {
-                        $("#column1").append('<div class="card text-white"><img src="' +
-                            name + '" class="card-img" alt="..."><div class="card-img-overlay"><h5 class="card-title">' +
-                            url + '</h5></div></div>')
-                        count++;
-                    } else if (count % 4 == 0 || count == 1) {
-                        $("#column2").append('<div class="card text-white"><img src="' +
-                            name + '" class="card-img" alt="..."><div class="card-img-overlay"><h5 class="card-title">' +
-                            url + '</h5></div></div>')
-                        count++;
-                    } else if (count % 5 == 0 || count == 2) {
-                        $("#column3").append('<div class="card text-white"><img src="' +
-                            name + '" class="card-img" alt="..."><div class="card-img-overlay"><h5 class="card-title">' +
-                            url + '</h5></div></div>')
-                        count++;
-                    }
+                        $("#photos-goes-here").append('<div class="card text-white"><img src="' +
+                        url + '" class="card-img" alt="..."></div>') ;
                 })
             })
-    })
-}
+    }
+
 loadPhotos();
 
 /// Function to display average rating .....
@@ -104,3 +89,22 @@ function displayrating(avg){
     }
 
 }
+
+// Function to display reviews .....
+
+function loadreviews(){
+
+    db.collection("locations").doc(locaID).collection("reviews")
+    .get()
+    .then(function (snap) {
+        snap.forEach(function (doc) {
+            var name = doc.data().postedby;
+            var rating = doc.data().reviewrating;
+            var text = doc.data().reviewdetails;
+
+                $("#reviews-goes-here").append('<div class="col=4"><p>'+name+rating+text+'<P></div>') ;
+        })
+    })
+}
+
+loadreviews();

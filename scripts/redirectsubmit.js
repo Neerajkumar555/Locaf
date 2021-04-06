@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 25c0a2d48ccb8df07426dd8c53a8d365e16bb02f
 function redirect() {
     var url = window.location.search;
     if (url == "?location") {

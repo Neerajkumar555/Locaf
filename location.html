@@ -159,7 +159,7 @@
         label.star {
             float: right;
             padding: 0px;
-            font-size: 36px;
+            font-size: 20px;
             color: #bfdbf7;
             transition: all .2s;
 
@@ -277,8 +277,7 @@
                 <div id="bannerinfo">
                     <h1 id="locaname">location name</h1>
                     <h5 id="locaaddress">location address</h5>
-
-                    <a href='postreview.html'>aaaaaaaaaa</a>
+                    <!-- <a href='postreview.html'>Write a Review</a> -->
                     <label id="avg_rtng"> Average Rating:</label>
                     <div class="stars">
                         <input class="star star-5" id="star-5" type="radio" disabled="disabled" name="star" />
@@ -292,7 +291,7 @@
                         <input class="star star-1" id="star-1" type="radio" disabled="disabled" name="star" />
                         <label class="star star-1" for="star-1"></label>
                     </div>
-                    
+                    <a class="btn btn-info" href="postreview.html" role="button">Write a Review</a>
                 </div>
             </div>
         </div>
@@ -311,9 +310,8 @@
                     type="button" role="tab" aria-controls="pills-photos" aria-selected="false">Photos</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-busy-tab" data-bs-toggle="pill" data-bs-target="#pills-busy"
-                    type="button" role="tab" aria-controls="pills-busy" aria-selected="false">How busy is
-                    it?</button>
+                <button class="nav-link" id="pills-reviews-tab" data-bs-toggle="pill" data-bs-target="#pills-reviews"
+                    type="button" role="tab" aria-controls="pills-busy" aria-selected="false">Reviews</button>
             </li>
         </ul>
         <div class="tab-content" id="pills-tabContent">
@@ -343,51 +341,13 @@
                 <h5>UberEats: </h5> <a href="http://www.ubereats.com">http://www.ubereats.com</a>
             </div>
             <div class="tab-pane fade" id="pills-photos" role="tabpanel" aria-labelledby="pills-photos-tab">
-                <div id="column1">
-                    <div class="card text-white">
-                        <img src="images/7.png" class="card-img" alt="...">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
-                    </div>
-                    <div class="card text-white">
-                        <img src="images/CafeLaptop.jpg" class="card-img" alt="...">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
-                    </div>
-                </div>
-                <div id="column2">
-                    <div class="card text-white">
-                        <img src="images/logo-tim-hortons.png" class="card-img" alt="...">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
-                    </div>
-                    <div class="card text-white">
-                        <img src="images/mapss.png" class="card-img" alt="...">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
-                    </div>
-                </div>
-                <div id="column3">
-                    <div class="card text-white">
-                        <img src="images/TableBook.jpg" class="card-img" alt="...">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
-                    </div>
-                    <div class="card text-white">
-                        <img src="images/mc.jpg" class="card-img" alt="...">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
-                    </div>
+                <div class="container" id="photos-goes-here">
                 </div>
             </div>
-            <div class="tab-pane fade" id="pills-busy" role="tabpanel" aria-labelledby="pills-busy-tab">...
-            </div>
+            <div class="tab-pane fade" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
+                <div class="container" id ="reviews-goes-here">
+                    </div>
+                    
         </div>
     </div>
     </div>
