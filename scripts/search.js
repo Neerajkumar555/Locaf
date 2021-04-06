@@ -3,6 +3,20 @@ var searchbutt = document.getElementById('searchbutt');
 var outputcount = 1;
 
 function showMyRestaurants() {
+    
+    if (window.location.search !== "?") {
+        let presearch = window.location.search.substring(1);
+        db.collection('locations').get()
+        .then(function (results) {
+            results.forEach(function (doc) {
+                if (doc.data().name == presearch) {
+                    let newLocation = $('<p class="link" id="' + doc.data().id + '">' + doc.data().name + doc.data().address + doc.data().description + '</p>');
+                    $('#results').append(newLocation);
+                }                
+            })
+        })
+    }
+    
     searchbutt.addEventListener('click', function () {
         var input = searchinput.value.toLowerCase();
         var quiet = Number(document.getElementById('btncheck1').checked);
@@ -63,6 +77,8 @@ function showMyRestaurants() {
                 }
             })
     })
+
+
 }
 showMyRestaurants();
 
