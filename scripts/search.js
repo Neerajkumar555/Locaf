@@ -29,6 +29,8 @@ function showMyRestaurants() {
         var userpref = [input, quiet, lively, washroom, fooddrink, lotraffic];
         console.log(userpref);
 
+        $('#results').html('');
+
         db.collection('locations').get()
             .then(function (search) {
                 // search = document from locations collection
