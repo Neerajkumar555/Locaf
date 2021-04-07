@@ -39,11 +39,19 @@ function postreview() {
                 postedby: user.displayName,
                 reviewrating: rating,
                 reviewdetails: text
+
+            })
+            var useref = db.collection('users');
+            var reviewref = useref.doc(user.uid).collection('reviews');
+            reviewref.doc().set({
+                postedby: user.displayName,
+                reviewrating: rating,
+                reviewdetails: text
             })
         })
         console.log("review posted!!");
         setTimeout(function () {
-            window.location.assign("submitted.html?review"); //re-direct to main.html after signup
+           window.location.assign("submitted.html?review"); //re-direct to main.html after signup
         }, 1000);
     })
 }
