@@ -67,9 +67,9 @@ function submitLocation() {
             uploadPhoto(user, fileInput.files[0], newEntry);
             
             console.log("Data was uploaded!")
-            setTimeout(function () {
-               window.location.assign("submitted.html?location"); //re-direct to main.html after signup
-            }, 1000);
+            // setTimeout(function () {
+            //    window.location.assign("submitted.html?location"); //re-direct to main.html after signup
+            // }, 1000);
         })
     })
 }
