@@ -27,6 +27,10 @@ loadInfo();
 ///function to display photos
 
 function loadPhotos() {
+
+    var photos = document.getElementById("pills-photos-tab");
+
+
    
         db.collection("locations").doc(locaID).collection("photos")
             .get()
@@ -97,12 +101,20 @@ function loadreviews(){
     db.collection("locations").doc(locaID).collection("reviews")
     .get()
     .then(function (snap) {
+
+        $("#reviews-goes-here").append('<div class="row" id="reviewgrid"></div>') ;
+
         snap.forEach(function (doc) {
             var name = doc.data().postedby;
             var rating = doc.data().reviewrating;
             var text = doc.data().reviewdetails;
 
-                $("#reviews-goes-here").append('<div class="col=4"><p>'+name+rating+text+'<P></div>') ;
+            var review ='<div class="col-4"><p>';
+            review +="<b>Posted by</b>: "+name+"<br>";
+            review += text+"<br>";
+            review += "<b>Rating</b>: "+rating+"</div>";
+
+                $("#reviewgrid").append(review) ;
         })
     })
 }
