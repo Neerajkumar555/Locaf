@@ -5,22 +5,22 @@ const locaID = getId();
 
 // Dependent on getting document info from results page
 function getId() {
-    var id = JSON.parse(localStorage.getItem('locationid')).id;    
+    var id = JSON.parse(localStorage.getItem('locationid')).id;
     console.log(id);
     return id;
 }
 
 function loadInfo() {
     db.collection("locations").doc(locaID).get()
-    .then(function(info) {
-        var n = info.data().name;
-        var a = info.data().address;
-        //var p = info.data().preferences;
+        .then(function (info) {
+            var n = info.data().name;
+            var a = info.data().address;
+            //var p = info.data().preferences;
 
-        locaname.innerHTML = n;
-        locaaddress.innerHTML = a;
-        //locaattribute.innerHTML = p;
-    })
+            locaname.innerHTML = n;
+            locaaddress.innerHTML = a;
+            //locaattribute.innerHTML = p;
+        })
 }
 loadInfo();
 
@@ -30,19 +30,19 @@ function loadPhotos() {
 
     var photos = document.getElementById("pills-photos-tab");
 
+    photos.addEventListener('click', function () {
 
-   
         db.collection("locations").doc(locaID).collection("photos")
             .get()
             .then(function (snap) {
                 snap.forEach(function (doc) {
                     var url = doc.data().photoURL;
-                        $("#photos-goes-here").append('<div class="card text-white"><img src="' +
-                        url + '" class="card-img" alt="..."></div>') ;
+                    $("#photos-goes-here").html('<div class="card text-white"><img src="' +
+                        url + '" class="card-img" alt="..."></div>');
                 })
             })
-    }
-
+    })
+}
 loadPhotos();
 
 /// Function to display average rating .....
@@ -66,9 +66,9 @@ function getavgrating() {
 }
 getavgrating();
 
-function displayrating(avg){
+function displayrating(avg) {
 
-    document.getElementById("avg_rtng").textContent += " "+avg;
+    document.getElementById("avg_rtng").textContent += " " + avg;
     switch (avg) {
         case 1:
             var rating = document.getElementById("star-1");
@@ -96,27 +96,30 @@ function displayrating(avg){
 
 // Function to display reviews .....
 
-function loadreviews(){
+function loadreviews() {
 
-    db.collection("locations").doc(locaID).collection("reviews")
-    .get()
-    .then(function (snap) {
 
-        $("#reviews-goes-here").append('<div class="row" id="reviewgrid"></div>') ;
 
-        snap.forEach(function (doc) {
-            var name = doc.data().postedby;
-            var rating = doc.data().reviewrating;
-            var text = doc.data().reviewdetails;
+        $("#photos-goes-here").html('');
 
-            var review ='<div class="col-4"><p>';
-            review +="<b>Posted by</b>: "+name+"<br>";
-            review += text+"<br>";
-            review += "<b>Rating</b>: "+rating+"</div>";
+        db.collection("locations").doc(locaID).collection("reviews")
+            .get()
+            .then(function (snap) {
+                $("#reviews-goes-here").append('<div class="row" id="reviewgrid"></div>');  
 
-                $("#reviewgrid").append(review) ;
-        })
-    })
-}
+                snap.forEach(function (doc) {
+                    var name = doc.data().postedby;
+                    var rating = doc.data().reviewrating;
+                    var text = doc.data().reviewdetails;
+
+                    var review = '<div class="col-4"><p>';
+                    review += "<b>Posted by</b>: " + name + "<br>";
+                    review += text + "<br>";
+                    review += "<b>Rating</b>: " + rating + "</div>";
+
+                    $("#reviewgrid").append(review);
+                })
+            })
+    }
 
 loadreviews();

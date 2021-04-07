@@ -44,7 +44,7 @@ function getEmail() {
 }
 getEmail();
 
-function getReview() {
+function getNumber() {
     firebase.auth().onAuthStateChanged(function (users) {
         if (users) {
             // User is signed in.
@@ -53,10 +53,10 @@ function getReview() {
             db.collection("users").doc(users.uid)
                 .get()
                 .then(function (doc) {
-                    var n = doc.data().reviews;
+                    var n = doc.data().number;
                     console.log(n);
 										
-                    $("#reviews").text(n);
+                    $("#number").text(n);
 										
                     
                 })
@@ -65,7 +65,79 @@ function getReview() {
         }
     });
 }
-getReview();
+getNumber();
+
+function getdesc() {
+    firebase.auth().onAuthStateChanged(function (users) {
+        if (users) {
+            // User is signed in.
+            
+            console.log(users.uid);
+            db.collection("users").doc(users.uid)
+                .get()
+                .then(function (doc) {
+                    var n = doc.data().description;
+                    console.log(n);
+										
+                    $("#desciption").text(n);
+										
+                    
+                })
+        } else {
+            // No user is signed in.
+        }
+    });
+}
+getdesc();
+
+function getaddress() {
+    firebase.auth().onAuthStateChanged(function (users) {
+        if (users) {
+            // User is signed in.
+            
+            console.log(users.uid);
+            db.collection("users").doc(users.uid)
+                .get()
+                .then(function (doc) {
+                    var n = doc.data().address;
+                    console.log(n);
+										
+                    $("#address").text(n);
+										
+                    
+                })
+        } else {
+            // No user is signed in.
+        }
+    });
+}
+getaddress();
+
+
+
+function getnickname() {
+    firebase.auth().onAuthStateChanged(function (users) {
+        if (users) {
+            // User is signed in.
+            
+            console.log(users.uid);
+            db.collection("users").doc(users.uid)
+                .get()
+                .then(function (doc) {
+                    var n = doc.data().nickname;
+                    console.log(n);
+										
+                    $("#nickname").text(n);
+										
+                    
+                })
+        } else {
+            // No user is signed in.
+        }
+    });
+}
+
+getnickname();
 
 function uploadUserProfilePic() {
     
