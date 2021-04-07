@@ -1,6 +1,6 @@
 var searchinput = document.getElementById('searchbar');
 var searchbutt = document.getElementById('searchbutt');
-var outputcount = 1;
+
 
 function showMyRestaurants() {
     
@@ -29,6 +29,10 @@ function showMyRestaurants() {
         var userpref = [input, quiet, lively, washroom, fooddrink, lotraffic];
         console.log(userpref);
 
+        // Count for the result numbers
+        let outputcount = 1;
+
+        // Clears results to prevent duplicates
         $('#results').html('');
 
         db.collection('locations').get()
@@ -62,7 +66,7 @@ function showMyRestaurants() {
                         // if values match, then display result
                         if (current == check) {
                             console.log("match!");
-                            displayLoc(locationsArray[i]);
+                            displayLoc(locationsArray[i], outputcount++);
                             toRemove.push(i);
                         }
                     }
@@ -86,14 +90,14 @@ showMyRestaurants();
 
 
 // displays a location when given a document
-function displayLoc(doc) {
+function displayLoc(doc, count) {
     var name = doc.data().name;
     var address = doc.data().address;
     var description = doc.data().description;
     var id = doc.id;
 
     // creates dom element to display in the page and appends to 'results' div
-    var newLocation = $('<p class="link" id="' + id + '">' + outputcount++ + ". " + name + address + description + '</p>');
+    var newLocation = $('<p class="link" id="' + id + '">' + count + ". " + name + " " + address + " " + description + '</p>');
     $('#results').append(newLocation);
     clickResult(id);
 }
