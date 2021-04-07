@@ -14,7 +14,87 @@
 
         <link rel="stylesheet" href="styles/navbar.css">
     <!-- Optional styles and scripts of your own -->
+    <style>
+        
+html {
+  box-sizing: border-box;
+}
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  color: #022b3a;
+  position: relative;
+}
+.about-section::after {
+  content: "";
+  background: url("images/aboutusbg.jpg");
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+  background-size: cover;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #022b3a;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+/* #about-con{
+    background-image: url("images/aboutusbg.jpg");
+    background-size: cover;
+} */
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+    </style>
 
 </head>
 
@@ -58,8 +138,64 @@
         </div>
     </nav>
 
-    <div class="container">
-        <h1 class="display-4">About Us</h1>
+    <div class="about-section" id="about-con">
+        <h1>About Locaf</h1>
+        <p><b>Connect users to study/work locations.</b></p>
+      </div>
+      
+      <h2 style="text-align:center">Our Team</h2>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+           <!-- // <img src="/w3images/team1.jpg" alt="Jane" style="width:100%"> -->
+            <div class="container">
+              <h2>Oscar la</h2>
+              <p class="title">CEO & Founder</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>oscar@gmail.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+           <!-- // <img src="/w3images/team2.jpg" alt="Mike" style="width:100%"> -->
+            <div class="container">
+              <h2>Richard Mac</h2>
+              <p class="title">CEO & Founder</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>richard@gmail.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <!-- //<img src="/w3images/team3.jpg" alt="John" style="width:100%"> -->
+            <div class="container">
+              <h2>Parsa</h2>
+              <p class="title">CEO & Founder</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>parse@gmail.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <!-- //<img src="/w3images/team3.jpg" alt="John" style="width:100%"> -->
+          <div class="container">
+            <h2>Neeraj Kumar</h2>
+            <p class="title">CEO & Founder</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>neeraj@gmail.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -74,12 +210,7 @@
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-            
-    <nav class="navbar fixed-bottom navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Locaf Footer</a>
-        </div>
-    </nav>
+
 </body>
 
 </html>
