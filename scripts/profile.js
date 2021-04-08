@@ -192,4 +192,31 @@ function displayUserProfilePic() {
 }
 
 
+// Function to display reviews .....
 
+function loadreviews() {
+
+    firebase.auth().onAuthStateChanged(function (user) {   
+
+    db.collection("users").doc(user.uid).collection("reviews")
+        .get()
+        .then(function (snap) {
+            $("#review-content").append('<div class="row card" id="reviewgrid"></div>');  
+
+            snap.forEach(function (doc) {
+                var name = doc.data().postedby;
+                var rating = doc.data().reviewrating;
+                var text = doc.data().reviewdetails;
+
+                var review = '<div class="col card-body"><p>';
+                review += "<b>Posted by</b>: " + name + "<br>";
+                review += text + "<br>";
+                review += "<b>Rating</b>: " + rating + "</div>";
+
+                $("#reviewgrid").append(review);
+            })
+        })
+    })
+}
+
+loadreviews();
