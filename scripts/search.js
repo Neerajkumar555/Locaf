@@ -52,6 +52,7 @@ function showMyRestaurants() {
                 // max rating a location can have
                 var check = 15;
 
+                // while the location array still has results to be processed
                 while (locationsArray.length > 0 && check >= 0) {
 
                     // array of indexes to remove
@@ -61,7 +62,7 @@ function showMyRestaurants() {
                         // the current location matching magnitude to compare
                         var current = x(locationsArray[i], userpref);
                         //console.log(boop++);
-                        console.log("checking for " + check + " versus " + current + " at: " + locationsArray[i].data().name)
+                        //console.log("checking for " + check + " versus " + current + " at: " + locationsArray[i].data().name)
 
                         // if values match, then display result
                         if (current == check) {
@@ -83,8 +84,6 @@ function showMyRestaurants() {
                 }
             })
     })
-
-
 }
 showMyRestaurants();
 

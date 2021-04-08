@@ -1,15 +1,21 @@
+// gets the name, address, and attribute divs on the page
 const locaname = document.getElementById("locaname");
 const locaaddress = document.getElementById("locaaddress");
 const locaattrib = document.getElementById("attribute");
+
+// the ID of the location that was clicked on the search page
 const locaID = getId();
 
-// Dependent on getting document info from results page
+
+// dependent on getting document info from results page
 function getId() {
     var id = JSON.parse(localStorage.getItem('locationid')).id;
     console.log(id);
     return id;
 }
 
+
+// loads information of the clicked location from the database and renders onto page
 function loadInfo() {
     db.collection("locations").doc(locaID).get()
         .then(function (info) {
@@ -24,12 +30,12 @@ function loadInfo() {
 }
 loadInfo();
 
-///function to display photos
 
+// loads photos into the photos tab
 function loadPhotos() {
-
     var photos = document.getElementById("pills-photos-tab");
 
+    // waits for the photos tab to be clicked
     photos.addEventListener('click', function () {
 
         db.collection("locations").doc(locaID).collection("photos")
@@ -45,28 +51,36 @@ function loadPhotos() {
 }
 loadPhotos();
 
-/// Function to display average rating .....
 
+// displays average rating of the location
+function getAvgRating() {
 
-function getavgrating() {
-
+    // sum of all ratings
     let ratingTotal = 0;
+
+    // number of reviews
     let count = 0;
 
     db.collection("locations").doc(locaID).collection("reviews")
         .get()
         .then(function (snap) {
+
+            // adds review to sum and increments count
             snap.forEach(function (doc) {
                 ratingTotal += doc.data().reviewrating;
                 count++;
             })
+
+            // calculate and display average rating
             avg = parseInt(ratingTotal / count);
-            displayrating(avg);
+            displayRating(avg);
         })
 }
-getavgrating();
+getAvgRating();
 
-function displayrating(avg) {
+
+// displays a given rating onto the page
+function displayRating(avg) {
 
     document.getElementById("avg_rtng").textContent += " " + avg;
     switch (avg) {
@@ -91,21 +105,27 @@ function displayrating(avg) {
             rating.checked = true;
             break;
     }
-
 }
 
-// Function to display reviews .....
 
-function loadreviews() {
+// loads reviews in the reviews tab
+function loadReviews() {
 
+    var reviews = document.getElementById("pills-reviews-tab");
 
-
+    // waits for the reviews tab to be clicked
+    reviews.addEventListener('click', function () {
+ 
+        // clears the photos and reviews tab of previous data to prevent duplicates
         $("#photos-goes-here").html('');
+        $("#reviews-goes-here").html('');
 
         db.collection("locations").doc(locaID).collection("reviews")
             .get()
             .then(function (snap) {
-                $("#reviews-goes-here").append('<div class="row" id="reviewgrid"></div>');  
+
+                // creates a grid to put the reviews into
+                $("#reviews-goes-here").append('<div class="row" id="reviewgrid"></div>');
 
                 snap.forEach(function (doc) {
                     var name = doc.data().postedby;
@@ -120,6 +140,6 @@ function loadreviews() {
                     $("#reviewgrid").append(review);
                 })
             })
-    }
-
-loadreviews();
+    })
+}
+loadReviews();

@@ -1,7 +1,14 @@
+// the locations collection within the database
 const locationRef = db.collection('locations');
+
+// the submit button
 const submitButton = document.getElementById('submit');
+
+// used to increment a document field
 const increment = firebase.firestore.FieldValue.increment(1);
 
+
+// uploads the photo into the database
 function uploadPhoto(user, file, entry) {
     var storageRef = storage.ref("images/" + user.uid + ".jpg");
 
@@ -10,47 +17,54 @@ function uploadPhoto(user, file, entry) {
         .then(function () {
             console.log('Uploaded to Cloud Storage.');
             storageRef.getDownloadURL()
-                .then(function (url) { // Get URL of the uploaded file   
-                    entry.collection("photos").doc().set({ // Save the URL into users collection
+                .then(function (url) {  
+
+                    // save the URL into the photos collection under the active user document
+                    entry.collection("photos").doc().set({ 
                             "photoURL": url,
                             "submitBy": user.displayName
                         })
                         .then(function () {
-                            console.log('Added photo URL to Firestore.');
+                            //console.log('Added photo URL to Firestore.');
                         })
                 })
         })
 }
 
+
+// submits location data + photo if uploaded into database
 function submitLocation() {
     firebase.auth().onAuthStateChanged(function (user) {
-        // Let's assume my storage is only enabled for authenticated users 
-        // This is set in your firebase console storage "rules" tab
         var newEntry = locationRef.doc();
-        var fileInput = document.getElementById("upload"); // pointer #1
-        const image = document.getElementById("loadedPic"); // pointer #2
 
-        // listen for file selection
+        // the upload button
+        var fileInput = document.getElementById("upload"); 
+
+        const image = document.getElementById("loadedPic"); 
+
+        // listens for a user-uploaded photo
         fileInput.addEventListener('change', function (e) {
             var file = e.target.files[0];
             var blob = URL.createObjectURL(file);
             image.src = blob; // display this image
             submitButton.addEventListener('click', function() {
-
             })
         })
+
+        // listens for the submit button to be clicked
         submitButton.addEventListener('click', function () {
 
+            // grabs all the input field values and converts into numbers
             var xname = document.getElementById('name').value.toLowerCase();
             var xaddress = document.getElementById('address').value.toLowerCase();
             var xdescription = document.getElementById('description').value.toLowerCase();
-
             var xquiet = Number(document.getElementById('quiet').checked);
             var xlively = Number(document.getElementById('lively').checked);
             var xwashroom = Number(document.getElementById('washroom').checked);
             var xfooddrink = Number(document.getElementById('fooddrink').checked);
             var xlotraffic = Number(document.getElementById('lotraffic').checked);
 
+            // creates a new document within locations
             newEntry.set({
                 name: xname,
                 address: xaddress,
@@ -64,12 +78,15 @@ function submitLocation() {
                 }
             })
 
+            // uploads the photo under the location; attributes to the user
             uploadPhoto(user, fileInput.files[0], newEntry);
             
-            console.log("Data was uploaded!")
-            // setTimeout(function () {
-            //    window.location.assign("submitted.html?location"); //re-direct to main.html after signup
-            // }, 1000);
+            //console.log("Data was uploaded!")
+
+            // small delay before submitting to show the 'weight' of the action
+            setTimeout(function () {
+               window.location.assign("submitted.html?location"); 
+            }, 500);
         })
     })
 }

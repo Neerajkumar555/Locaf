@@ -1,4 +1,5 @@
 
+// redirects the user to the search page and appends input to URL to be used
 function mainSearch() {
     let searchbutt = document.getElementById("searchbutt");
     let userinput = document.getElementById("userinput");
@@ -7,6 +8,7 @@ function mainSearch() {
 
         e.preventDefault();
 
+        // the input to be used on the search page
         var transfer = userinput.value;
         window.location.href = "Search.html?" + transfer;
 
