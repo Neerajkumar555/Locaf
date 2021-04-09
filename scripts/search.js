@@ -4,19 +4,24 @@ var searchbutt = document.getElementById('searchbutt');
 
 function showMyRestaurants() {
     
+    // if the user came from the main page and has inputted something, generate results on search page based on input
     if (window.location.search !== "?") {
         let presearch = window.location.search.substring(1);
         db.collection('locations').get()
         .then(function (results) {
+
+            // display any results that match the user input when the page is loaded
             results.forEach(function (doc) {
                 if (doc.data().name == presearch) {
-                    let newLocation = $('<p class="link" id="' + doc.data().id + '">' + doc.data().name + doc.data().address + doc.data().description + '</p>');
+                    let newLocation = $('<p class="link" id="' + doc.data().id + '">' + doc.data().name + doc.data().address 
+                        + doc.data().description + '</p>');
                     $('#results').append(newLocation);
                 }                
             })
         })
     }
     
+    // waits for the user to click on the submit button
     searchbutt.addEventListener('click', function () {
         var input = searchinput.value.toLowerCase();
         var quiet = Number(document.getElementById('btncheck1').checked);
@@ -136,6 +141,8 @@ function clickResult(locaid) {
         var id = {
             "id": locaid
         }
+        
+        // stores the location document ID into local storage to grab later
         localStorage.setItem('locationid', JSON.stringify(id));
         window.location.href = "location.html" + "?" + locaid;
     })
