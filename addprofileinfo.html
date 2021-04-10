@@ -32,7 +32,7 @@
             width: 90%;
             background-color: white;
             border-radius: 5%;
-            border: blue solid 2px;
+            border: #022b3a solid 2px;
             margin: 5%;
             font-size: large;
         }
@@ -44,6 +44,8 @@
         }
         #submit {
             border-radius: 15%;
+            background-color:  #022b3a;
+            color:white;
         }
         .inputtext {
             border: none;
@@ -106,20 +108,25 @@
     <div class="container">
         <br/>
         <div class="wrapper">
-            <h4 class="header">Extra Profile Information</h4>
+            <h4 class="header">Edit Profile Information</h4>
             <div>
-                <input class="inputtext" type="text" id="nickname" name="nickname" placeholder="nickname" required="required" autofocus="autofocus">
+                <input class="inputtext" type="text" id="username" name="username" placeholder="username" required autofocus="autofocus">
                 <br/>
-                <input class="inputtext" type="text" id="description" name="description" placeholder="Description">
+                <input class="inputtext" type="text" id="nickname" name="nickname" placeholder="nickname" required autofocus="autofocus">
                 <br/>
-                <input class="inputtext" type="text" id="number" name="number" placeholder="number" required="required">
+                <input class="inputtext" type="text" id="description" name="description" placeholder="description" required>
                 <br/>
-                <input class="inputtext" type="text" id="address" name="address" placeholder="address" required="required">
+                <input class="inputtext" type="text" id="number" name="number" placeholder="number" required>
+                <br/>
+                <input class="inputtext" type="text" id="address" name="address" placeholder="address" required>
                 <br/>
             </div>
+             
+            
             <div id="buttondiv">
-                <button id="submit">Submit</button>
+                <button id="submit">UPDATE</button>
             </div>
+            
         </div>
     </div>
 

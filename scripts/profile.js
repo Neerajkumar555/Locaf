@@ -15,14 +15,15 @@ function getUserInfo() {
                     var nick = doc.data().nickname;
                     
                     // displays grabbed data onto page
-                    $("#username").text(name);
-                    $("#desciption").text(desc);
-                    $("#email").text(mail);
-                    $("#number").text(numb);
-                    $("#address").text(add);
-                    $("#nickname").text(nick);
+                    $("#username").val(name).text(name);
+                    $("#description").val(desc).text(desc);
+                    $("#email").val(mail).text(mail);
+                    $("#number").val(numb).text(numb);
+                    $("#address").val(add).text(add);
+                    $("#nickname").val(nick).text(nick);
                 })
         } else {
+            
             // No user is signed in.
         }
     });
@@ -182,7 +183,7 @@ function uploadUserProfilePic() {
         })
     })
 }
-uploadUserProfilePic();
+//uploadUserProfilePic();
 
 
 // displays the user profile picture onto the page
@@ -200,7 +201,7 @@ function displayUserProfilePic() {
             })
     })
 }
-displayUserProfilePic();
+//displayUserProfilePic();
 
 
 // grabs the reviews associated with the user from the database and loads them onto the page
@@ -230,3 +231,8 @@ function loadReviews() {
     })
 }
 loadReviews();
+
+
+
+
+var str = document.getElementById("address").value;

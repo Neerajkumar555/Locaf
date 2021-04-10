@@ -13,13 +13,15 @@ function submitProfileInfo() {
         submitButton.addEventListener('click', function () {
 
             // grabs the user's input values
-            var xnickname = document.getElementById('nickname').value.toLowerCase();
-            var xnumber = document.getElementById('number').value.toLowerCase();
-            var xdescription = document.getElementById('description').value.toLowerCase();
-            var xaddress = document.getElementById('address').value.toLowerCase();
+            var xusername = document.getElementById('username').value;
+            var xnickname = document.getElementById('nickname').value;
+            var xnumber = document.getElementById('number').value;
+            var xdescription = document.getElementById('description').value;
+            var xaddress = document.getElementById('address').value;
 
             // updates the user document with more information
             newEntry.update({
+                name: xusername,
                 nickname: xnickname,
                 description: xdescription,
                 number: xnumber,
@@ -29,7 +31,7 @@ function submitProfileInfo() {
             //console.log("Data was uploaded!")
             // short delay after submitting to show the 'weight' of the action
             setTimeout(function () {
-               window.location.assign("submitted.html?location"); 
+               window.location.assign("profile.html?location"); 
             }, 500);
         })
     })
