@@ -15,58 +15,9 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
     <!-- Optional styles and scripts of your own bfdbf7 1f7a8c 022b3a e1e5f2-->
-    <style>
-        #preferences input, #preferences label {
-            display: inline-block;
-        }
-        div.stars {
-  display: inline-block;
-}
-
-input.star { display: none; }
-
-label.star {
-  float: right;
-  padding: 0px;
-  font-size: 36px;
-  color: #bfdbf7;
-  transition: all .2s;
-  
-}
-
-input.star:checked ~ label.star:before {
-  content: '\f005';
-  color:#022b3a;
-  transition: all .25s;
-  
-}
-
-input.star-5:checked ~ label.star:before {
-  color: #022b3a;
-  text-shadow: 0 0 20px #1f7a8c;
-}
-
-input.star-1:checked ~ label.star:before { color: #F62; }
-
-label.star:hover { transform:  scale(1.4); }
-
-label.star:before {
-  content: '\f006';
-  font-family: FontAwesome;
-}
-#review_content{
-    border: 1px solid white;
-    margin-bottom: 10px;
-    margin-top: 10px
-}
-#post{
-    background-color: #022b3a;
-}
-
-    </style>
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <link rel="stylesheet" href="styles/postreview.css">
 </head>
 
 <body>
@@ -158,12 +109,6 @@ label.star:before {
 
     <script src="/scripts/post_review.js"></script>
 
-    
-    <nav class="navbar fixed-bottom navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Locaf Footer</a>
-        </div>
-    </nav>
 </body>
 
 </html>

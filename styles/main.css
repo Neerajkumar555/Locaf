@@ -45,7 +45,7 @@
     margin-top: 5px;
     caret-color: transparent;
     line-height: 20px;
-    transition: width 0.4s linear
+    transition: width 0.4s linear;
 }
 .search .search-input {
     padding: 0 10px;
@@ -110,16 +110,17 @@ a:link {
     width: 80%;
 }
 #exploretext {
-    font-size: 20pt;
+    font-size: 20px;
     font-weight: bold;
     margin-right: 20px;
-}
+} 
 #explore .nav-link.active {
     background-color: #1F7A8C;
 }
 #explore .nav-link:hover {
     border: 3px solid #1F7A8C;
     background-color: #BFDBF7;
+    color: black;
 }
 #pills-tabContent {
     margin-top: 5%;
@@ -130,3 +131,4 @@ a:link {
     margin: auto;
     margin-bottom: 5%;
 }
+

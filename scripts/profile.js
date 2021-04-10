@@ -212,7 +212,7 @@ function loadReviews() {
     db.collection("users").doc(user.uid).collection("reviews")
         .get()
         .then(function (snap) {
-            $("#review-content").append('<div class="row card" id="reviewgrid"></div>');  
+            $("#review-content").append('<div class="" id="reviewgrid"></div>');  
 
             // places each review in a stylized card
             snap.forEach(function (doc) {
@@ -220,7 +220,7 @@ function loadReviews() {
                 var rating = doc.data().reviewrating;
                 var text = doc.data().reviewdetails;
 
-                var review = '<div class="col card-body"><p>';
+                var review = '<div class="col card"><p>';
                 review += "<b>Posted by</b>: " + name + "<br>";
                 review += text + "<br>";
                 review += "<b>Rating</b>: " + rating + "</div>";
