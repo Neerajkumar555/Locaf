@@ -62,11 +62,16 @@
         <div class="wrapper">
             <h4 class="header">Submit a Location</h4>
             <div>
-                <input class="inputtext" type="text" id="name" name="name" placeholder="Name" required="required" autofocus="autofocus">
-                <br/>
-                <input class="inputtext" type="text" id="description" name="description" placeholder="Description">
-                <br/>
-                <input class="inputtext" type="text" id="address" name="address" placeholder="Address" required="required">
+                <h5>Please fill out the form with the following details:</h5>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="name" placeholder="Location Name">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="address" placeholder="Location Address">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" id="description" placeholder="A short description of the location" rows="3"></textarea>
+                </div>
                 <br/>
             </div>
             <div>
@@ -86,8 +91,11 @@
             <div>
                 <label class="header">Do you have any photos of the location? If so, please upload them below:</label>
                 <div>
-                    <img id="loadedPic" src="images/coffeecup.png" width=50 height=50/>
-                    <input type="file" id="upload" accept="image/*"/>
+                    <div class="input-group mb-3">
+                        <img id="loadedPic" src="images/coffeecup.png" width=45 height=45/>
+                        <input type="file" class="form-control" id="upload" accept="image/*">
+                    </div>
+                    
                 </div>
             </div>
             <div id="buttondiv">
