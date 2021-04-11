@@ -132,7 +132,7 @@ function loadReviews() {
                     var rating = doc.data().reviewrating;
                     var text = doc.data().reviewdetails;
 
-                    var review = '<div class="col-4"><p>';
+                    var review = '<div class="col-6 card"><p>';
                     review += "<b>Posted by</b>: " + name + "<br>";
                     review += text + "<br>";
                     review += "<b>Rating</b>: " + rating + "</div>";
