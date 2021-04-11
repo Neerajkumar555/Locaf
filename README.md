@@ -13,8 +13,6 @@ This project was created for COMP1800 Projects 1 from the British Columbia Insti
 
 Through the shared desire of finding safe, viable locations to study (as well as for a good grade), we have implemented Locaf, a curated search-engine that takes inspiration from apps such as Yelp to deliver a comfortable user experience that targets the student as well as working professional demographics.
 
-## Screenshots ##
-
 ## Tech/Framework Used ##
 ### Built with: ###
 - HTML/CSS
@@ -35,6 +33,7 @@ Through the shared desire of finding safe, viable locations to study (as well as
 Simply clone the branch to get a working copy of our code. This project can only be run locally, but is connected online through Google firebase.
 
 ## Credits ##
-- Our COMP1800 professor Carly Orr for her guidance and advice throughout the process
+- Our COMP1800 professor Carly Orr for her guidance and advice throughout the process.
+- Our peers in COMP1800 Set D for their feedback and ideas.
 
 
