@@ -131,4 +131,6 @@ a:link {
     margin: auto;
     margin-bottom: 5%;
 }
-
+.col-md-2 {
+    width: 20%;
+}
