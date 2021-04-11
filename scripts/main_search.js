@@ -13,5 +13,24 @@ function mainSearch() {
         window.location.href = "Search.html?" + transfer;
 
     })
+
+
+
 }
 mainSearch();
+
+function quickSearch() {
+    var quickbutt = document.getElementsByClassName("card-inner");
+
+    var myFunction = function() {
+        let check = this.getAttribute("id");
+        
+        window.location.href = "Search.html?" + check;
+    };
+    
+    for (var i = 0; i < quickbutt.length; i++) {
+        quickbutt[i].addEventListener('click', myFunction);
+    }
+    
+}
+quickSearch();
