@@ -25,7 +25,7 @@ function uploadPhoto(user, file, entry) {
                             "submitBy": user.displayName
                         })
                         .then(function () {
-                            //console.log('Added photo URL to Firestore.');
+                            console.log('Added photo URL to Firestore.');
                         })
                 })
         })
@@ -47,8 +47,6 @@ function submitLocation() {
             var file = e.target.files[0];
             var blob = URL.createObjectURL(file);
             image.src = blob; // display this image
-            submitButton.addEventListener('click', function() {
-            })
         })
 
         // listens for the submit button to be clicked
@@ -57,7 +55,7 @@ function submitLocation() {
             // grabs all the input field values and converts into numbers
             var xname = document.getElementById('name').value.toLowerCase();
             var xaddress = document.getElementById('address').value.toLowerCase();
-            var xdescription = document.getElementById('description').value.toLowerCase();
+            var xdescription = document.getElementById('description').value;
             var xquiet = Number(document.getElementById('quiet').checked);
             var xlively = Number(document.getElementById('lively').checked);
             var xwashroom = Number(document.getElementById('washroom').checked);
@@ -79,14 +77,14 @@ function submitLocation() {
             })
 
             // uploads the photo under the location; attributes to the user
-            uploadPhoto(user, fileInput.files[0], newEntry);
-            
-            //console.log("Data was uploaded!")
+            uploadPhoto(user, fileInput.files[0], newEntry)
 
-            // small delay before submitting to show the 'weight' of the action
+            //console.log("Data was uploaded!")
             setTimeout(function () {
-               window.location.assign("submitted.html?location"); 
-            }, 500);
+                window.location.assign("submitted.html?location"); 
+             }, 1000);
+            // small delay before submitting to show the 'weight' of the action
+
         })
     })
 }
