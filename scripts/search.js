@@ -2,25 +2,79 @@ var searchinput = document.getElementById('searchbar');
 var searchbutt = document.getElementById('searchbutt');
 
 
+// searches locations if redirected by the main page buttons
+function quickDisplay(search) {
+    db.collection('locations').get()
+    .then(function (results) {
+
+        // checks which preference was clicked from the main page
+        switch (search) {
+            case "quiet":
+                results.forEach(function (doc) {
+                    console.log(doc.data().preferences.quiet);
+                    if (doc.data().preferences.quiet == 1) {
+                        displayLoc(doc);
+                    }
+                })
+                break;
+            case "lively":
+                results.forEach(function (doc) {
+                    console.log(doc.data().preferences.lively);
+                    if (doc.data().preferences.lively == 1) {
+                        displayLoc(doc);
+                    }
+                })
+                break;
+            case "food":
+                results.forEach(function (doc) {
+                    if (doc.data().preferences.fooddrink == 1) {
+                        displayLoc(doc);
+                    }
+                })
+                break;
+            case "wash":
+                results.forEach(function (doc) {
+                    if (doc.data().preferences.washroom == 1) {
+                        displayLoc(doc);
+                    }
+                })
+                break;
+            case "lo":
+                results.forEach(function (doc) {
+                    if (doc.data().preferences.lotraffic == 1) {
+                        displayLoc(doc);
+                    }
+                })
+                break;
+        }
+    })
+}
+
 function showMyRestaurants() {
-    
+
     // if the user came from the main page and has inputted something, generate results on search page based on input
     if (window.location.search !== "?") {
         let presearch = window.location.search.substring(1);
-        db.collection('locations').get()
-        .then(function (results) {
+        console.log(presearch);
 
-            // display any results that match the user input when the page is loaded
-            results.forEach(function (doc) {
-                if (doc.data().name == presearch) {
-                    let newLocation = $('<p class="link" id="' + doc.data().id + '">' + doc.data().name + doc.data().address 
-                        + doc.data().description + '</p>');
-                    $('#results').append(newLocation);
-                }                
-            })
-        })
+        if (presearch !== 'quiet' && presearch !== 'lively' && presearch !== 'food' &&
+            presearch !== 'wash' && presearch !== 'lo') {
+            db.collection('locations').get()
+                .then(function (results) {
+
+                    // display any results that match the user input when the page is loaded
+                    results.forEach(function (doc) {
+                        console.log(doc.data().name);
+                        if (doc.data().name == presearch) {
+                            displayLoc(doc);
+                        }
+                    })
+                })
+        } else {
+            quickDisplay(presearch);
+        }
     }
-    
+
     // waits for the user to click on the submit button
     searchbutt.addEventListener('click', function () {
         var input = searchinput.value.toLowerCase();
@@ -33,9 +87,6 @@ function showMyRestaurants() {
         //             string    1       0        1         0           0
         var userpref = [input, quiet, lively, washroom, fooddrink, lotraffic];
         console.log(userpref);
-
-        // Count for the result numbers
-        let outputcount = 1;
 
         // Clears results to prevent duplicates
         $('#results').html('');
@@ -65,14 +116,14 @@ function showMyRestaurants() {
                     for (i = 0; i < locationsArray.length; i++) {
 
                         // the current location matching magnitude to compare
-                        var current = x(locationsArray[i], userpref);
+                        var current = match(locationsArray[i], userpref);
                         //console.log(boop++);
                         //console.log("checking for " + check + " versus " + current + " at: " + locationsArray[i].data().name)
 
                         // if values match, then display result
                         if (current == check) {
                             console.log("match!");
-                            displayLoc(locationsArray[i], outputcount++);
+                            displayLoc(locationsArray[i]);
                             toRemove.push(i);
                         }
                     }
@@ -94,20 +145,20 @@ showMyRestaurants();
 
 
 // displays a location when given a document
-function displayLoc(doc, count) {
+function displayLoc(doc) {
     var name = doc.data().name;
     var address = doc.data().address;
     var description = doc.data().description;
     var id = doc.id;
 
     // creates dom element to display in the page and appends to 'results' div
-    var newLocation = $('<p class="link" id="' + id + '">' + count + ". " + name + " " + address + " " + description + '</p>');
+    var newLocation = $('<p class="link" id="' + id + '">' + ". " + name + " " + address + " " + description + '</p>');
     $('#results').append(newLocation);
     clickResult(id);
 }
 
 // sets the magnitude of how much the location matches the search + preferences
-function x(doc, userpref) {
+function match(doc, userpref) {
     var xinput = doc.data().name;
     var xquiet = doc.data().preferences.quiet;
     var xlively = doc.data().preferences.lively;
@@ -137,11 +188,11 @@ function x(doc, userpref) {
 // redirects to the location clicked and has data stored in both URL and localstorage
 function clickResult(locaid) {
     var location = document.getElementById(locaid);
-    location.addEventListener('click', function() {
+    location.addEventListener('click', function () {
         var id = {
             "id": locaid
         }
-        
+
         // stores the location document ID into local storage to grab later
         localStorage.setItem('locationid', JSON.stringify(id));
         window.location.href = "location.html" + "?" + locaid;
