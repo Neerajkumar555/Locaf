@@ -36,7 +36,25 @@
             padding: 70px;
         }
 
+        .btn-check:active+.btn-outline-primary,
+        .btn-check:checked+.btn-outline-primary,
+        .btn-outline-primary.active,
+        .btn-outline-primary.dropdown-toggle.show,
+        .btn-outline-primary:active {
+            color: #1f7a8c;
+            background-color: #bfdbf7;
+            border-color: #bfdbf7;
+            font-weight: bold;
+        }
 
+        .btn-outline-primary {
+            color: white;
+            border-color: #022b3a;
+        }
+
+        .btn {
+            background-color: #1f7a8c;
+        }
 
         form.example input[type=text] {
             padding: 10px;
@@ -172,78 +190,24 @@
 
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-       
-        <div class="card card-body" style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">
-            <h5>Environment</h5>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Quiet
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                    Outdoor seats
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                    Wifi
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                    Washroom
-                </label>
-            </div>
-        </div>
-        &nbsp;
-        &nbsp;
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-primary"
-                style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">$</button>
-            <button type="button" class="btn btn-primary"
-                style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">$$</button>
-            <button type="button" class="btn btn-primary"
-                style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">$$$</button>
-        </div>
-        </br>
 
-        <div class="card card-body" style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">
-            <h5>Food</h5>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Sandwich
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                    Coffee Shop
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                    Pizza
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                    Italian
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                    Burger
-                </label>
-            </div>
+        <div id="prefbutton" class="card card-body"
+            style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">
+            <h4>Environment</h4>
+            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck1">Quiet</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck2">Lively</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck3">Washroom</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck4">Food and Drink</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck4">Low Traffic</label>
         </div>
         <div id="map" style=" float: left;"></div>
     </div>
@@ -270,7 +234,7 @@
                             <a class="nav-link active" href="aboutus.html">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="Search.html">Search</a>
+                            <a class="nav-link active" href="Search2.html">Search</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="profile.html">Profile</a>
@@ -284,138 +248,30 @@
         </nav>
 
 
-
-
-
-
-
-
-        </br>
-        </br>
-
-        </br>
-
-
-
         <!-- Results get appended here -->
+        </br>
+        </br>
+        </br>
 
         <div id="main">
             <button class="openbtn" onclick="openNav()">☰ Preferences</button>
         </div>
-
-
         <div class="container" style="max-width: 1200px;">
             <div class="row">
-                <div class="input-group mb-3" style="width: 800px;">
-                    <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search..."
-                        aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor"
-                            class="bi bi-search" viewBox="0 0 16 16">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg></button>
+                <div class="d-flex justify-content-center px-4">
+                    <div class="search"> <input id="searchbar" type="text" class="search-input"
+                            placeholder="search a work/study location.." name=""> <a id="searchbutt" href="#"
+                            class="search-icon"> <i class="fa fa-search"></i> </a> </div>
                 </div>
-                <h3 style="text-align: left;">The locations near <span id="my-address"></span></h3>
             </div>
-            <div class="row" id="myItems">
-                <div class="card mb-3" style="max-width: 1040px; background-color: #E1E5F2; float: left; clear: right;">
-                    <div class="row g-0">
-                        <div class="col-md-4" style="max-width: 170px;">
-                            <img src="images/1200px-Starbucks_Corporation_Logo_2011.svg.png" alt="Food"
-                                style="width:150px;height:150px; ">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body" style="max-width: 870px;">
-                                <h5 class="card-title" style="float: left;">
-                                    <div id="Locations-go-here">
 
-                                    </div>
-                                </h5>
-                                <p style="float: right; font-size: medium;"><small class="text-muted">$$</small></p>
-                                <p class="card-text" style="font-size: medium; float: left;">This is a wider card with
-                                    supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text" style="font-size: medium; float: left;"><small
-                                        class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3" style="max-width: 1040px; background-color: #E1E5F2; float: left; clear: right;">
-                    <div class="row g-0">
-                        <div class="col-md-4" style="max-width: 170px;">
-                            <img src="images/1200px-Starbucks_Corporation_Logo_2011.svg.png" alt="Food"
-                                style="width:150px;height:150px; ">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body" style="max-width: 870px;">
-                                <h5 class="card-title" style="float: left;">Tim Horton's</h5>
-                                <p style="float: right; font-size: medium;"><small class="text-muted">$$</small></p>
-                                <p class="card-text" style="font-size: medium; float: left;">This is a wider card with
-                                    supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text" style="font-size: medium; float: left;"><small
-                                        class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3" style="max-width: 1040px; background-color: #E1E5F2; float: left; clear: right;">
-                    <div class="row g-0">
-                        <div class="col-md-4" style="max-width: 170px;">
-                            <img src="images/1200px-Starbucks_Corporation_Logo_2011.svg.png" alt="Food"
-                                style="width:150px;height:150px; ">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body" style="max-width: 870px;">
-                                <h5 class="card-title" style="float: left;">McDonald's</h5>
-                                <p style="float: right; font-size: medium;"><small class="text-muted">$$</small></p>
-                                <p class="card-text" style="font-size: medium; float: left;">This is a wider card with
-                                    supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text" style="font-size: medium; float: left;"><small
-                                        class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3" style="max-width: 1040px; background-color: #E1E5F2; float: left; clear: right;">
-                    <div class="row g-0">
-                        <div class="col-md-4" style="max-width: 170px;">
-                            <img src="images/1200px-Starbucks_Corporation_Logo_2011.svg.png" alt="Food"
-                                style="width:150px;height:150px; ">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body" style="max-width: 870px;">
-                                <h5 class="card-title" style="float: left;">Wave's Coffee</h5>
-                                <p style="float: right; font-size: medium;"><small class="text-muted">$$</small></p>
-                                <p class="card-text" style="font-size: medium; float: left;">This is a wider card with
-                                    supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text" style="font-size: medium; float: left;"><small
-                                        class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <br/>
+            <div class="row" id="results">
+                <h3>Whoops! You haven't searched anything yet.</h3>
             </div>
         </div>
     </div>
 
-    <div style="float: none; clear: both;">
-        <nav aria-label="...">
-            <div class="pagination justify-content-center">
-                <ul class="pagination pagination-sm">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
 
 
 
@@ -434,70 +290,13 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
 
     <script src="/scripts/firebase_login.js"></script>
-    <script src="/scripts/search.js"></script>
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGmThR4ueZR8MqgbX6ebi474e8h6XYIAw&callback=initMap&libraries=&v=weekly"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGmThR4ueZR8MqgbX6ebi474e8h6XYIAw&callback=initMap&libraries=&v=weekly"
         async></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+    <script src="/scripts/search.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
-
-
-    <script>
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-
-        function myFunction() {
-            var input, filter, cards, cardContainer, h5, title, i;
-            input = document.getElementById("myFilter");
-            filter = input.value.toUpperCase();
-            cardContainer = document.getElementById("myItems");
-            cards = cardContainer.getElementsByClassName("card");
-            for (i = 0; i < cards.length; i++) {
-                title = cards[i].querySelector(".card-body h5.card-title");
-                if (title.innerText.toUpperCase().indexOf(filter) > -1) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
-            }
-        }
-
-        function displayLocations() {
-            db.collection("locations")
-                .where("name", "in", ["Waves Coffee"])
-                .get()
-                .then(function (snapcollection) {
-                    snapcollection.forEach(function (doc) {
-                        console.log(doc.data());
-                        console.log(doc.data().name);
-                        var id = doc.id;
-                        var name = doc.data().name;
-                        $("#Locations-go-here").append("<p id='" + id + "'>" + name + "</p>")
-                    })
-                })
-
-        }
-        displayLocations();
-    </script>
-    </div>
 </body>
 
 </html>
