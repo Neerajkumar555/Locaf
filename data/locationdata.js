@@ -6,6 +6,7 @@ var dummydata = [
         city: 'Vancouver',
         country: "Canada",
         description: 'A popular, busy joint that is always bustling with customers; a very Canadian location indeed.', 
+        averagerate: 0, 
         preferences: {
             fooddrink: 1,
             lively: 1,
@@ -19,6 +20,7 @@ var dummydata = [
         city: 'Vancouver',
         country: "Canada",
         description: 'Japanese fast-food with limited seating, but a very friendly atmosphere.', 
+        averagerate: 0, 
         preferences: {
             fooddrink: 1,
             lively: 0,
@@ -32,6 +34,7 @@ var dummydata = [
         city: 'Vancouver',
         country: "Canada",
         description: 'Well-regard cookies and a location central to the student hub makes this location a popular spot.', 
+        averagerate: 0, 
         preferences: {
             fooddrink: 1,
             lively: 1,
@@ -45,6 +48,7 @@ var dummydata = [
         city: 'Vancouver',
         country: "Canada",
         description: 'Premium coffee coupled with hot cafe foods equals an ideal studying spot.', 
+        averagerate: 0, 
         preferences: {
             fooddrink: 1,
             lively: 0,
@@ -58,6 +62,7 @@ var dummydata = [
         city: 'Vancouver',
         country: "Canada",
         description: 'A popular study location, Breka serves great desserts and comfort foods that make studying a joy.', 
+        averagerate: 0, 
         preferences: {
             fooddrink: 1,
             lively: 1,
@@ -71,6 +76,7 @@ var dummydata = [
         city: 'Richmond',
         country: "Canada",
         description: 'Bubble tea joint with many tables and outlets for quality studying.', 
+        averagerate: 0, 
         preferences: {
             fooddrink: 1,
             lively: 0,
@@ -83,7 +89,8 @@ var dummydata = [
         address: '3900 Kingsway',
         city: 'Burnaby',
         country: "Canada",
-        description: 'Lively bubble tea chain with a bright, bubbly environment.', 
+        description: 'Lively bubble tea chain with a bright, bubbly environment.',
+        averagerate: 0, 
         preferences: {
             fooddrink: 1,
             lively: 1,
@@ -97,6 +104,7 @@ var dummydata = [
         city: 'Surrey',
         country: "Canada",
         description: 'Taiwanese bubble tea joint specializing in fruit teas; limited seating.', 
+        averagerate: 0, 
         preferences: {
             fooddrink: 1,
             lively: 0,
@@ -109,7 +117,8 @@ var dummydata = [
         address: '5100 No. 3 Road',
         city: 'Richmond',
         country: "Canada",
-        description: 'Shaved ice location that also sells hot drinks making it a great option in any condition.', 
+        description: 'Shaved ice location that also sells hot drinks making it a great option in any condition.',
+        averagerate: 0,  
         preferences: {
             fooddrink: 1,
             lively: 0,
@@ -123,6 +132,7 @@ var dummydata = [
         city: 'Burnaby',
         country: "Canada",
         description: 'An iconic chain selling a wide variety of drinks with ample seating.', 
+        averagerate: 0, 
         preferences: {
             fooddrink: 1,
             lively: 1,
