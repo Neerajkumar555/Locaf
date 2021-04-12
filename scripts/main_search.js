@@ -10,7 +10,7 @@ function mainSearch() {
 
         // the input to be used on the search page
         var transfer = userinput.value;
-        window.location.href = "Search.html?" + transfer;
+        window.location.href = "Search2.html?" + transfer;
 
     })
 
@@ -27,7 +27,7 @@ function quickSearch() {
     var redirect = function() {
         let check = this.getAttribute("id");
         
-        window.location.href = "Search.html?" + check;
+        window.location.href = "Search2.html?" + check;
     };
     
     for (var i = 0; i < quickbutt.length; i++) {
