@@ -32,6 +32,12 @@ body {
     text-align: center;
 }
 
+.btn-info {
+    color: white;
+    background-color: #022B3A;
+    border-color: #022B3A;
+}
+
 #submit {
     border-radius: 15%;
 }
