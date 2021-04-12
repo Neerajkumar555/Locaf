@@ -15,6 +15,21 @@ body {
     padding-bottom: 10%;
 }
 
+.btn-outline-primary {
+    color: #1F78AC;
+    border-color: #1F78AC;
+}
+
+.btn-check:active+.btn-outline-primary, 
+.btn-check:checked+.btn-outline-primary, 
+.btn-outline-primary.active, 
+.btn-outline-primary.dropdown-toggle.show, 
+.btn-outline-primary:active {
+    color: #fff;
+    background-color: #1F78AC;
+    border-color: #1F78AC;
+}
+
 .wrapper {
     width: 90%;
     background-color: white;

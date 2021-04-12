@@ -2,7 +2,9 @@ var locationsRef = db.collection('locations');
 
 var dummydata = [
     {   name: 'Tim Hortons', 
-        address: '123 Maple St, Vancouver, BC',
+        address: '123 Maple St',
+        city: 'Vancouver',
+        country: "Canada",
         description: 'A popular, busy joint that is always bustling with customers; a very Canadian location indeed.', 
         preferences: {
             fooddrink: 1,
@@ -13,7 +15,9 @@ var dummydata = [
         }
     },
     {   name: 'Simple Bites', 
-        address: '5905 Chester St, Vancouver, BC',
+        address: '5905 Chester St',
+        city: 'Vancouver',
+        country: "Canada",
         description: 'Japanese fast-food with limited seating, but a very friendly atmosphere.', 
         preferences: {
             fooddrink: 1,
@@ -24,7 +28,9 @@ var dummydata = [
         }
     },
     {   name: 'Blue Chip', 
-        address: '3300 University Boulevard, Vancouver, BC',
+        address: '3300 University Boulevard',
+        city: 'Vancouver',
+        country: "Canada",
         description: 'Well-regard cookies and a location central to the student hub makes this location a popular spot.', 
         preferences: {
             fooddrink: 1,
@@ -35,7 +41,9 @@ var dummydata = [
         }  
     },
     {   name: 'Waves Coffee', 
-        address: '5300 University Boulevard, Vancouver, BC',
+        address: '5300 University Boulevard',
+        city: 'Vancouver',
+        country: "Canada",
         description: 'Premium coffee coupled with hot cafe foods equals an ideal studying spot.', 
         preferences: {
             fooddrink: 1,
@@ -46,7 +54,9 @@ var dummydata = [
         }  
     },
     {   name: 'Breka Bakery and Cafe', 
-        address: '855 Davie Street, Vancouver, BC',
+        address: '855 Davie Street',
+        city: 'Vancouver',
+        country: "Canada",
         description: 'A popular study location, Breka serves great desserts and comfort foods that make studying a joy.', 
         preferences: {
             fooddrink: 1,
@@ -57,7 +67,9 @@ var dummydata = [
         }  
     },
     {   name: 'ShareTea', 
-        address: '800 Capstan Way, Richmond, BC',
+        address: '800 Capstan Way',
+        city: 'Richmond',
+        country: "Canada",
         description: 'Bubble tea joint with many tables and outlets for quality studying.', 
         preferences: {
             fooddrink: 1,
@@ -68,7 +80,9 @@ var dummydata = [
         }  
     },
     {   name: 'CoCo Bubble Tea', 
-        address: '3900 Kingsway, Burnaby, BC',
+        address: '3900 Kingsway',
+        city: 'Burnaby',
+        country: "Canada",
         description: 'Lively bubble tea chain with a bright, bubbly environment.', 
         preferences: {
             fooddrink: 1,
@@ -79,7 +93,9 @@ var dummydata = [
         }  
     },
     {   name: 'Yifang Taiwan', 
-        address: '53924 103 Ave, Surrey, BC',
+        address: '53924 103 Ave',
+        city: 'Surrey',
+        country: "Canada",
         description: 'Taiwanese bubble tea joint specializing in fruit teas; limited seating.', 
         preferences: {
             fooddrink: 1,
@@ -90,7 +106,9 @@ var dummydata = [
         }  
     },
     {   name: 'Jack Frost', 
-        address: '5100 No. 3 Road, Richmond, BC',
+        address: '5100 No. 3 Road',
+        city: 'Richmond',
+        country: "Canada",
         description: 'Shaved ice location that also sells hot drinks making it a great option in any condition.', 
         preferences: {
             fooddrink: 1,
@@ -101,7 +119,9 @@ var dummydata = [
         }  
     },
     {   name: 'Starbucks', 
-        address: '500 Sussex St, Burnaby, BC',
+        address: '500 Sussex St',
+        city: 'Burnaby',
+        country: "Canada",
         description: 'An iconic chain selling a wide variety of drinks with ample seating.', 
         preferences: {
             fooddrink: 1,
@@ -118,6 +138,8 @@ function writeDummyLocations() {
         locationsRef.add({
             name: place.name,
             address: place.address,
+            city: place.city,
+            country: place.country,
             description: place.description,
             preferences: {
                 fooddrink: place.preferences.fooddrink,
