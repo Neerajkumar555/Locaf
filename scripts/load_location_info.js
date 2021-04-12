@@ -130,14 +130,14 @@ function loadReviews() {
             .then(function (snap) {
 
                 // creates a grid to put the reviews into
-                $("#reviews-goes-here").append('<div class="row" id="reviewgrid"></div>');
+                $("#reviews-goes-here").append('<div class="" id="reviewgrid"></div>');
 
                 snap.forEach(function (doc) {
                     var name = doc.data().postedby;
                     var rating = doc.data().reviewrating;
                     var text = doc.data().reviewdetails;
 
-                    var review = '<div class="col-6 card"><p>';
+                    var review = '<div class="col card"><p>';
                     review += "<b>Posted by</b>: " + name + "<br>";
                     review += text + "<br>";
                     review += "<b>Rating</b>: " + rating + "</div>";
