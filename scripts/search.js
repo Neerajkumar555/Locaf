@@ -11,6 +11,8 @@ function quickDisplay(search) {
     db.collection('locations').get()
         .then(function (results) {
 
+            console.log('running');
+
             // checks which preference was clicked from the main page
             switch (search) {
                 case "quiet":
@@ -63,6 +65,7 @@ function showMyRestaurants() {
     // if the user came from the main page and has inputted something, generate results on search page based on input
     if (window.location.search !== "?") {
         let presearch = window.location.search.substring(1);
+        console.log(presearch);
 
         if (presearch !== 'quiet' && presearch !== 'lively' && presearch !== 'food' &&
             presearch !== 'wash' && presearch !== 'lo') {
@@ -119,6 +122,7 @@ function showMyRestaurants() {
                 // max rating a location can have
                 var check = 15;
 
+                var boop = 1;
                 // while the location array still has results to be processed
                 while (locationsArray.length > 0 && check >= 0) {
 
@@ -128,8 +132,8 @@ function showMyRestaurants() {
 
                         // the current location matching magnitude to compare
                         var current = match(locationsArray[i], userpref);
-                        //console.log(boop++);
-                        //console.log("checking for " + check + " versus " + current + " at: " + locationsArray[i].data().name)
+                        console.log(boop++);
+                        console.log("checking for " + check + " versus " + current + " at: " + locationsArray[i].data().name)
 
                         // if values match, then display result
                         if (current == check) {
@@ -201,8 +205,9 @@ function grabLocationPic(result) {
 
 // sets the magnitude of how much the location matches the search + preferences
 function match(doc, userpref) {
-    var xinput = doc.data().name.toLowerCase;
+    var xinput = doc.data().name.toLowerCase();
     var xdescript = doc.data().description;
+    var xaddress = doc.data().address;
     var xquiet = doc.data().preferences.quiet;
     var xlively = doc.data().preferences.lively;
     var xwashroom = doc.data().preferences.washroom;
@@ -211,12 +216,16 @@ function match(doc, userpref) {
     var checkpref = [xquiet, xlively, xwashroom, xfooddrink, xlotraffic];
     var matchMag = 0;
 
+    console.log(xinput);
+    console.log(userpref[0]);
+
     // checks how alike the preferences are (same name or description gets more weight)
-    if (xinput == userpref[0] || xdescript.includes(userpref[0])) {
+    if (xinput == userpref[0] || xdescript.includes(userpref[0]) || xaddress.includes(userpref[0])) {
         matchMag += 10;
     }
+
     for (n = 1; n < checkpref.length; n++) {
-        if (userpref[n - 1] == checkpref[n]) {
+        if (userpref[n] == checkpref[n-1]) {
             matchMag++;
         }
     }
