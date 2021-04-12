@@ -55,6 +55,8 @@ function submitLocation() {
             // grabs all the input field values and converts into numbers
             var xname = document.getElementById('name').value.toLowerCase();
             var xaddress = document.getElementById('address').value.toLowerCase();
+            var xcity = document.getElementById('name').value.toLowerCase();
+            var xcountry = document.getElementById('address').value.toLowerCase();
             var xdescription = document.getElementById('description').value;
             var xquiet = Number(document.getElementById('quiet').checked);
             var xlively = Number(document.getElementById('lively').checked);
@@ -66,7 +68,10 @@ function submitLocation() {
             newEntry.set({
                 name: xname,
                 address: xaddress,
+                city = xcity,
+                country = xcountry,
                 description: xdescription,
+                averagerate: 0,
                 preferences: {
                     quiet: xquiet,
                     lively: xlively,

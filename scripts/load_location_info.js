@@ -52,7 +52,7 @@ function loadPhotos() {
 loadPhotos();
 
 
-// displays average rating of the location
+// displays average rating of the location and saves to location
 function getAvgRating() {
 
     // sum of all ratings
@@ -74,6 +74,11 @@ function getAvgRating() {
             // calculate and display average rating
             avg = parseInt(ratingTotal / count);
             displayRating(avg);
+
+            // sets the average rating for search purposes
+            db.collection("locations").doc(locaID).update({
+                averagerate: avg
+            })
         })
 }
 getAvgRating();
@@ -115,7 +120,7 @@ function loadReviews() {
 
     // waits for the reviews tab to be clicked
     reviews.addEventListener('click', function () {
- 
+
         // clears the photos and reviews tab of previous data to prevent duplicates
         $("#photos-goes-here").html('');
         $("#reviews-goes-here").html('');

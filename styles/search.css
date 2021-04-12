@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+    flex: 30%;
+    padding: 70px;
+}
+
+.btn-check:active+.btn-outline-primary,
+.btn-check:checked+.btn-outline-primary,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.btn-outline-primary:active {
+    color: #1f7a8c;
+    background-color: #bfdbf7;
+    border-color: #bfdbf7;
+    font-weight: bold;
+}
+
+.btn-outline-primary {
+    color: white;
+    border-color: #022b3a;
+}
+
+.btn {
+    background-color: #1f7a8c;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #1f7a8c;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #bfdbf7;
+    color: #022b3a;
+    font-size: 17px;
+    border: 1px solid #022b3a;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #1f7a8c;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+    color: #1f7a8c;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #022b3a;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 130px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    margin-top: 75;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #022b3a;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding-top: 20px;
+    padding-bottom: 20;
+}
+
+
+
+/* Set the size of the div element that contains the map */
+#map {
+    height: 200px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+    float: right;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

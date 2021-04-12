@@ -4,54 +4,58 @@ var searchbutt = document.getElementById('searchbutt');
 
 // searches locations if redirected by the main page buttons
 function quickDisplay(search) {
+
+    // Clears results to prevent duplicates
+    $('#results').html('<h3>Here are the best matching results for you:</h3>');
+
     db.collection('locations').get()
-    .then(function (results) {
+        .then(function (results) {
 
-        // checks which preference was clicked from the main page
-        switch (search) {
-            case "quiet":
-                results.forEach(function (doc) {
-                    console.log(doc.data().preferences.quiet);
-                    if (doc.data().preferences.quiet == 1) {
-                        displayLoc(doc);
-                    }
-                })
-                break;
+            // checks which preference was clicked from the main page
+            switch (search) {
+                case "quiet":
+                    results.forEach(function (doc) {
+                        console.log(doc.data().preferences.quiet);
+                        if (doc.data().preferences.quiet == 1) {
+                            displayLoc(doc);
+                        }
+                    })
+                    break;
 
-            case "lively":
-                results.forEach(function (doc) {
-                    console.log(doc.data().preferences.lively);
-                    if (doc.data().preferences.lively == 1) {
-                        displayLoc(doc);
-                    }
-                })
-                break;
+                case "lively":
+                    results.forEach(function (doc) {
+                        console.log(doc.data().preferences.lively);
+                        if (doc.data().preferences.lively == 1) {
+                            displayLoc(doc);
+                        }
+                    })
+                    break;
 
-            case "food":
-                results.forEach(function (doc) {
-                    if (doc.data().preferences.fooddrink == 1) {
-                        displayLoc(doc);
-                    }
-                })
-                break;
+                case "food":
+                    results.forEach(function (doc) {
+                        if (doc.data().preferences.fooddrink == 1) {
+                            displayLoc(doc);
+                        }
+                    })
+                    break;
 
-            case "wash":
-                results.forEach(function (doc) {
-                    if (doc.data().preferences.washroom == 1) {
-                        displayLoc(doc);
-                    }
-                })
-                break;
-                
-            case "lo":
-                results.forEach(function (doc) {
-                    if (doc.data().preferences.lotraffic == 1) {
-                        displayLoc(doc);
-                    }
-                })
-                break;
-        }
-    })
+                case "wash":
+                    results.forEach(function (doc) {
+                        if (doc.data().preferences.washroom == 1) {
+                            displayLoc(doc);
+                        }
+                    })
+                    break;
+
+                case "lo":
+                    results.forEach(function (doc) {
+                        if (doc.data().preferences.lotraffic == 1) {
+                            displayLoc(doc);
+                        }
+                    })
+                    break;
+            }
+        })
 }
 
 function showMyRestaurants() {
@@ -59,19 +63,17 @@ function showMyRestaurants() {
     // if the user came from the main page and has inputted something, generate results on search page based on input
     if (window.location.search !== "?") {
         let presearch = window.location.search.substring(1);
-        console.log(presearch);
 
         if (presearch !== 'quiet' && presearch !== 'lively' && presearch !== 'food' &&
             presearch !== 'wash' && presearch !== 'lo') {
-            db.collection('locations').get()
+            db.collection('locations')
+                .where("name", "==", presearch)
+                .get()
                 .then(function (results) {
 
                     // display any results that match the user input when the page is loaded
                     results.forEach(function (doc) {
-                        console.log(doc.data().name);
-                        if (doc.data().name == presearch) {
-                            displayLoc(doc);
-                        }
+                        displayLoc(doc);
                     })
                 })
         } else {
@@ -80,7 +82,12 @@ function showMyRestaurants() {
     }
 
     // waits for the user to click on the submit button
-    searchbutt.addEventListener('click', function () {
+    searchbutt.addEventListener('click', function (e) {
+
+        e.preventDefault();
+
+        closeNav();
+
         var input = searchinput.value.toLowerCase();
         var quiet = Number(document.getElementById('btncheck1').checked);
         var lively = Number(document.getElementById('btncheck2').checked);
@@ -93,11 +100,11 @@ function showMyRestaurants() {
         console.log(userpref);
 
         // Clears results to prevent duplicates
-        $('#results').html('');
+        $('#results').html('<h3>Here are the best matching results for you:</h3>');
 
         db.collection('locations').get()
             .then(function (search) {
-                // search = document from locations collection
+                // search = documents from locations collection
                 console.log(search);
 
                 // To iterate through
@@ -155,29 +162,61 @@ function displayLoc(doc) {
     var description = doc.data().description;
     var id = doc.id;
 
+    if (typeof(grabLocationPic(doc)) == "undefined") {
+        var photo = "images/logo.png";
+    } else {
+        var photo = grabLocationPic(doc);
+    }
+
+    
+
     // creates dom element to display in the page and appends to 'results' div
-    var newLocation = $('<p class="link" id="' + id + '">' + ". " + name + " " + address + " " + description + '</p>');
-    $('#results').append(newLocation);
+    // var newLocation = $('<p class="link" id="' + id + '">' + ". " + name + " " + address + " " + description + '</p>');
+
+    var hello = $('<div class="card mb-3" id="' + id + '" style="max-width: 1040px; background-color: #FFFFFF;"><div class="row g-0">' +
+        '<div class="col-md-4" style="max-width: 170px;"><img src="' + photo + '" alt="result" style="width:100px;height:100px; ">' +
+        '</div><div class="col-md-8"><div class="card-body" style="max-width: 870px;"><h5 class="card-title" style="float: left;">' +
+        name + '</h5><p style="float: right; font-size: medium;"><small class="text-muted">' + address + '</small></p>' +
+        '<p class="card-text" style="font-size: medium; float: left;">' + description + '</p><p class="card-text" style="font-size:' +
+        'medium; float: left;"><small class="text-muted">Last updated 3 mins ago</small></p></div></div></div></div>')
+
+    $('#results').append(hello);
+
     clickResult(id);
+}
+
+function grabLocationPic(result) {
+
+    // grabs the photo from the user's document
+    db.collection("locations").doc(result.id).collection('photos')
+        .limit(1)
+        .get()
+        .then(function (docs) {
+            docs.forEach(function(doc) {
+                var picURL = doc.data().photoURL;
+                return picURL;
+            })
+        })
 }
 
 // sets the magnitude of how much the location matches the search + preferences
 function match(doc, userpref) {
-    var xinput = doc.data().name;
+    var xinput = doc.data().name.toLowerCase;
+    var xdescript = doc.data().description;
     var xquiet = doc.data().preferences.quiet;
     var xlively = doc.data().preferences.lively;
     var xwashroom = doc.data().preferences.washroom;
     var xfooddrink = doc.data().preferences.fooddrink;
     var xlotraffic = doc.data().preferences.lotraffic;
-    var checkpref = [xinput, xquiet, xlively, xwashroom, xfooddrink, xlotraffic];
+    var checkpref = [xquiet, xlively, xwashroom, xfooddrink, xlotraffic];
     var matchMag = 0;
 
-    // checks how alike the preferences are (same name gets +10)
-    if (checkpref[0] == userpref[0]) {
+    // checks how alike the preferences are (same name or description gets more weight)
+    if (xinput == userpref[0] || xdescript.includes(userpref[0])) {
         matchMag += 10;
     }
-    for (n = 1; n < 6; n++) {
-        if (userpref[n] == checkpref[n]) {
+    for (n = 1; n < checkpref.length; n++) {
+        if (userpref[n - 1] == checkpref[n]) {
             matchMag++;
         }
     }
@@ -192,6 +231,7 @@ function match(doc, userpref) {
 // redirects to the location clicked and has data stored in both URL and localstorage
 function clickResult(locaid) {
     var location = document.getElementById(locaid);
+
     location.addEventListener('click', function () {
         var id = {
             "id": locaid
@@ -201,4 +241,18 @@ function clickResult(locaid) {
         localStorage.setItem('locationid', JSON.stringify(id));
         window.location.href = "location.html" + "?" + locaid;
     })
+}
+
+
+// open preference bar function
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+
+// close preference bar function
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
 }

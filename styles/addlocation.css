@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 input,
 label {
     display: inline-block;
@@ -6,6 +8,7 @@ label {
 
 body {
     height: 100%;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .container {
@@ -13,6 +16,21 @@ body {
     width: 96vw;
     height: auto;
     padding-bottom: 10%;
+}
+
+.btn-outline-primary {
+    color: #1F78AC;
+    border-color: #1F78AC;
+}
+
+.btn-check:active+.btn-outline-primary, 
+.btn-check:checked+.btn-outline-primary, 
+.btn-outline-primary.active, 
+.btn-outline-primary.dropdown-toggle.show, 
+.btn-outline-primary:active {
+    color: #fff;
+    background-color: #1F78AC;
+    border-color: #1F78AC;
 }
 
 .wrapper {
@@ -30,6 +48,12 @@ body {
 
 #buttondiv {
     text-align: center;
+}
+
+.btn-info {
+    color: white;
+    background-color: #022B3A;
+    border-color: #022B3A;
 }
 
 #submit {
