@@ -4,6 +4,10 @@ var searchbutt = document.getElementById('searchbutt');
 
 // searches locations if redirected by the main page buttons
 function quickDisplay(search) {
+
+    // Clears results to prevent duplicates
+    $('#results').html('<h3>Here are the best matching results for you:</h3>');
+
     db.collection('locations').get()
         .then(function (results) {
 
