@@ -74,6 +74,11 @@ function getAvgRating() {
             // calculate and display average rating
             avg = parseInt(ratingTotal / count);
             displayRating(avg);
+
+            // update the average rating of the location for search purposes
+            db.collection("locations").doc(locaID).set({
+                averagerate: avg
+            })
         })
 }
 getAvgRating();
