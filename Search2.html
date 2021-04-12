@@ -70,53 +70,58 @@
             color: #1f7a8c;
         }
 
-
-
-
-        .sidenav {
+        .sidebar {
             height: 100%;
-            width: 220px;
+            width: 0;
             position: fixed;
             z-index: 1;
             top: 0;
             left: 0;
             background-color: #022b3a;
             overflow-x: hidden;
-            padding-top: 20px;
+            transition: 0.5s;
+            padding-top: 130px;
         }
 
-        .sidenav a {
-            padding: 6px 8px 6px 16px;
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 25px;
             color: #818181;
             display: block;
+            transition: 0.3s;
         }
 
-        .sidenav a:hover {
+        .sidebar a:hover {
             color: #f1f1f1;
         }
 
-        .main {
-            margin-left: 240px;
-            /* Same as the width of the sidenav */
-            font-size: 28px;
-            /* Increased text to enable scrolling */
-            padding: 0px 10px;
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            margin-top: 75;
         }
 
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #022b3a;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
 
-            .sidenav a {
-                font-size: 18px;
-            }
+        .openbtn:hover {
+            background-color: #444;
+        }
 
-            .sidebar {
-                float: left;
-            }
+        #main {
+            transition: margin-left .5s;
+            padding-top: 20px;
+            padding-bottom: 20;
         }
 
 
@@ -165,87 +170,87 @@
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
 
-    <div class="sidenav">
-        <div class="sidebar">
-            </br>
-            </br>
-            </br>
-            </br>
-            <div class="card card-body" style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">
-                <h5>Environment</h5>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Quiet
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Outdoor seats
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Wifi
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Washroom
-                    </label>
-                </div>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+       
+        <div class="card card-body" style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">
+            <h5>Environment</h5>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Quiet
+                </label>
             </div>
-            &nbsp;
-            &nbsp;
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary"
-                    style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">$</button>
-                <button type="button" class="btn btn-primary"
-                    style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">$$</button>
-                <button type="button" class="btn btn-primary"
-                    style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">$$$</button>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    Outdoor seats
+                </label>
             </div>
-            </br>
-
-            <div class="card card-body" style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">
-                <h5>Food</h5>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Sandwich
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Coffee Shop
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Pizza
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Italian
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Burger
-                    </label>
-                </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    Wifi
+                </label>
             </div>
-            <div id="map" style=" float: left;"></div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    Washroom
+                </label>
+            </div>
         </div>
+        &nbsp;
+        &nbsp;
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary"
+                style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">$</button>
+            <button type="button" class="btn btn-primary"
+                style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">$$</button>
+            <button type="button" class="btn btn-primary"
+                style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">$$$</button>
+        </div>
+        </br>
+
+        <div class="card card-body" style="color:#bfdbf7 ; background-color:#022b3a; border-color:#022b3a;">
+            <h5>Food</h5>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Sandwich
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    Coffee Shop
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    Pizza
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    Italian
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    Burger
+                </label>
+            </div>
+        </div>
+        <div id="map" style=" float: left;"></div>
     </div>
+
+    <!-- <div id="mySidebar" class="sidebar">
+        
+    </div> -->
     <div class="main">
         <nav class="navbar fixed-top navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
@@ -294,7 +299,9 @@
 
         <!-- Results get appended here -->
 
-
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">☰ Preferences</button>
+        </div>
 
 
         <div class="container" style="max-width: 1200px;">
@@ -343,11 +350,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body" style="max-width: 870px;">
-                                <h5 class="card-title" style="float: left;">
-                                    <div id="Locations2-go-here">
-
-                                    </div>
-                                </h5>
+                                <h5 class="card-title" style="float: left;">Tim Horton's</h5>
                                 <p style="float: right; font-size: medium;"><small class="text-muted">$$</small></p>
                                 <p class="card-text" style="font-size: medium; float: left;">This is a wider card with
                                     supporting text below as a natural
@@ -449,7 +452,18 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
 
+
     <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
         function myFunction() {
             var input, filter, cards, cardContainer, h5, title, i;
             input = document.getElementById("myFilter");
@@ -481,23 +495,7 @@
                 })
 
         }
-
-        function displayLocations2() {
-            db.collection("locations")
-                .where("name", "in", ["Simple Bites"])
-                .get()
-                .then(function (snapcollection) {
-                    snapcollection.forEach(function (doc) {
-                        console.log(doc.data());
-                        console.log(doc.data().name);
-                        var id = doc.id;
-                        var name = doc.data().name;
-                        $("#Locations2-go-here").append("<p id='" + id + "'>" + name + "</p>")
-                    })
-                })
-
-        }
-        displayLocations2();
+        displayLocations();
     </script>
     </div>
 </body>
