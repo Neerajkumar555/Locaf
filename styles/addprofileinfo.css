@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 input,
 label {
     display: inline-block;
@@ -6,6 +8,7 @@ label {
 
 body {
     height: 100%;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .container {
