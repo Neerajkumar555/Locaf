@@ -134,3 +134,9 @@ a:link {
 .col-md-2 {
     width: 20%;
 }
+
+@media (max-width: 991px) {
+    .col-md-2 {
+        width: 100%;
+    }
+}

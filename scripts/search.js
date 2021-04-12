@@ -17,6 +17,7 @@ function quickDisplay(search) {
                     }
                 })
                 break;
+
             case "lively":
                 results.forEach(function (doc) {
                     console.log(doc.data().preferences.lively);
@@ -25,6 +26,7 @@ function quickDisplay(search) {
                     }
                 })
                 break;
+
             case "food":
                 results.forEach(function (doc) {
                     if (doc.data().preferences.fooddrink == 1) {
@@ -32,6 +34,7 @@ function quickDisplay(search) {
                     }
                 })
                 break;
+
             case "wash":
                 results.forEach(function (doc) {
                     if (doc.data().preferences.washroom == 1) {
@@ -39,6 +42,7 @@ function quickDisplay(search) {
                     }
                 })
                 break;
+                
             case "lo":
                 results.forEach(function (doc) {
                     if (doc.data().preferences.lotraffic == 1) {

@@ -19,17 +19,19 @@ function mainSearch() {
 }
 mainSearch();
 
+
+// quick-search button function
 function quickSearch() {
     var quickbutt = document.getElementsByClassName("card-inner");
 
-    var myFunction = function() {
+    var redirect = function() {
         let check = this.getAttribute("id");
         
         window.location.href = "Search.html?" + check;
     };
     
     for (var i = 0; i < quickbutt.length; i++) {
-        quickbutt[i].addEventListener('click', myFunction);
+        quickbutt[i].addEventListener('click', redirect);
     }
     
 }
