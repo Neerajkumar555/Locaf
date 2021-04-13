@@ -11,8 +11,6 @@ function quickDisplay(search) {
     db.collection('locations').get()
         .then(function (results) {
 
-            console.log('running');
-
             // checks which preference was clicked from the main page
             switch (search) {
                 case "quiet":
@@ -64,11 +62,18 @@ function showMyRestaurants() {
 
     // if the user came from the main page and has inputted something, generate results on search page based on input
     if (window.location.search !== "?") {
-        let presearch = window.location.search.substring(1);
+        var presearch = window.location.search.substring(1);
+
+        // replaces the utf character symbol with a space
+        if (presearch.includes("%20")) {
+            presearch = presearch.substring(0, presearch.indexOf("%")) + " " + presearch.substring(presearch.indexOf("0") + 1);
+        }
+
         console.log(presearch);
 
+        // checks if the url was redirected from the main page quick buttons
         if (presearch !== 'quiet' && presearch !== 'lively' && presearch !== 'food' &&
-            presearch !== 'wash' && presearch !== 'lo') {
+        presearch !== 'wash' && presearch !== 'lo') {
             db.collection('locations')
                 .where("name", "==", presearch)
                 .get()
@@ -166,13 +171,13 @@ function displayLoc(doc) {
     var description = doc.data().description;
     var id = doc.id;
 
-    if (typeof(grabLocationPic(doc)) == "undefined") {
+    if (typeof (grabLocationPic(doc)) == "undefined") {
         var photo = "images/logo.png";
     } else {
         var photo = grabLocationPic(doc);
     }
 
-    
+
 
     // creates dom element to display in the page and appends to 'results' div
     // var newLocation = $('<p class="link" id="' + id + '">' + ". " + name + " " + address + " " + description + '</p>');
@@ -196,7 +201,7 @@ function grabLocationPic(result) {
         .limit(1)
         .get()
         .then(function (docs) {
-            docs.forEach(function(doc) {
+            docs.forEach(function (doc) {
                 var picURL = doc.data().photoURL;
                 return picURL;
             })
@@ -225,7 +230,7 @@ function match(doc, userpref) {
     }
 
     for (n = 1; n < checkpref.length; n++) {
-        if (userpref[n] == checkpref[n-1]) {
+        if (userpref[n] == checkpref[n - 1]) {
             matchMag++;
         }
     }
