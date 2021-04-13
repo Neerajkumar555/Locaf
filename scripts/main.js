@@ -1,4 +1,3 @@
-
 // grabs the location picture and renders if available; default image if not
 function grabLocationPic(result) {
 
@@ -118,3 +117,28 @@ function loadCanada() {
         })
 }
 loadCanada();
+
+function displaymsg() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            //console.log(users.uid);
+            db.collection("users").doc(user.uid)
+                .get()
+                .then(function (doc) {
+                    // grabs data name user doc
+                    var name = doc.data().name;
+
+                    // displays grabbed data onto page
+                    var message = "<h2> Hello, " + name + "</h2>";
+
+                    $("#name").before(message);
+
+                })
+        } else {
+
+            // No user is signed in.
+        }
+    })
+}
+
+displaymsg();
