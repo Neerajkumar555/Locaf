@@ -66,16 +66,25 @@ function showMyRestaurants() {
 
         // replaces the utf character symbol with a space
         if (presearch.includes("%20")) {
+            
+
+            
             presearch = presearch.substring(0, presearch.indexOf("%")) + " " + presearch.substring(presearch.indexOf("0") + 1);
+
+            var cap = function(str) {
+                return str.charAt(0).toUpperCase() + str.slice(1);
+            }
+
+            var final = presearch.split(' ').map(cap).join(' ');
         }
 
-        console.log(presearch);
+        console.log(final);
 
         // checks if the url was redirected from the main page quick buttons
-        if (presearch !== 'quiet' && presearch !== 'lively' && presearch !== 'food' &&
-        presearch !== 'wash' && presearch !== 'lo') {
+        if (final !== 'quiet' && final !== 'lively' && final !== 'food' &&
+        final !== 'wash' && final !== 'lo') {
             db.collection('locations')
-                .where("name", "==", presearch)
+                .where("name", "==", final)
                 .get()
                 .then(function (results) {
 
@@ -85,7 +94,7 @@ function showMyRestaurants() {
                     })
                 })
         } else {
-            quickDisplay(presearch);
+            quickDisplay(final);
         }
     }
 
@@ -211,7 +220,7 @@ function grabLocationPic(result) {
 // sets the magnitude of how much the location matches the search + preferences
 function match(doc, userpref) {
     var xinput = doc.data().name.toLowerCase();
-    var xdescript = doc.data().description;
+    var xdescript = doc.data().description.toLowerCase();
     var xaddress = doc.data().address;
     var xquiet = doc.data().preferences.quiet;
     var xlively = doc.data().preferences.lively;
