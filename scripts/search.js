@@ -76,15 +76,16 @@ function showMyRestaurants() {
             }
 
             var final = presearch.split(' ').map(cap).join(' ');
+            presearch = final;
         }
 
-        console.log(final);
+        console.log(presearch);
 
         // checks if the url was redirected from the main page quick buttons
-        if (final !== 'quiet' && final !== 'lively' && final !== 'food' &&
-        final !== 'wash' && final !== 'lo') {
+        if (presearch !== 'quiet' && presearch !== 'lively' && presearch !== 'food' &&
+        presearch !== 'wash' && presearch !== 'lo') {
             db.collection('locations')
-                .where("name", "==", final)
+                .where("name", "==", presearch)
                 .get()
                 .then(function (results) {
 
@@ -94,7 +95,7 @@ function showMyRestaurants() {
                     })
                 })
         } else {
-            quickDisplay(final);
+            quickDisplay(presearch);
         }
     }
 
