@@ -68,8 +68,8 @@ function submitLocation() {
             newEntry.set({
                 name: xname,
                 address: xaddress,
-                city = xcity,
-                country = xcountry,
+                city: xcity,
+                country: xcountry,
                 description: xdescription,
                 averagerate: 0,
                 preferences: {
@@ -88,7 +88,6 @@ function submitLocation() {
             setTimeout(function () {
                 window.location.assign("submitted.html?location"); 
              }, 1000);
-            // small delay before submitting to show the 'weight' of the action
 
         })
     })
