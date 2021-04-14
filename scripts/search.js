@@ -81,6 +81,9 @@ function showMyRestaurants() {
 
         console.log(presearch);
 
+        // Clears results to prevent duplicates
+        $('#results').html('<h3>Here are the best matching results for you:</h3>');
+        
         // checks if the url was redirected from the main page quick buttons
         if (presearch !== 'quiet' && presearch !== 'lively' && presearch !== 'food' &&
         presearch !== 'wash' && presearch !== 'lo') {
