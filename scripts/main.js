@@ -40,13 +40,31 @@ function loadHighRating() {
                     '</div><div class="col-md-8"><div class="card-body" style="max-width: 870px;"><h5 class="card-title" style="float: left;">' +
                     name + '</h5><p style="float: right; font-size: medium;"><small class="text-muted">' + address + '</small></p>' +
                     '<p class="card-text" style="font-size: medium; float: left;">' + description + '</p><p class="card-text" style="font-size:' +
-                    'medium; float: left;"><small class="text-muted">Last updated 3 mins ago</small></p></div></div></div></div>')
+                    'medium; float: left;"><small class="text-muted">Last updated 3 mins ago</small></p></div></div></div></div>');
 
-                $('#renderrated').append(hello)
+                $('#renderrated').append(hello);
+
+                clickResult(id);
             })
         })
 }
 loadHighRating();
+
+
+// redirects to the location clicked and has data stored in both URL and localstorage
+function clickResult(locaid) {
+    var location = document.getElementById(locaid);
+
+    location.addEventListener('click', function () {
+        var id = {
+            "id": locaid
+        }
+
+        // stores the location document ID into local storage to grab later
+        localStorage.setItem('locationid', JSON.stringify(id));
+        window.location.href = "location.html" + "?" + locaid;
+    })
+}
 
 
 // loads 3 vancouver locations into vancouver tab
@@ -65,7 +83,7 @@ function loadVancouver() {
                     var photo = grabLocationPic(loc);
                 }
 
-                let id = loc.data().id;
+                let id = loc.id;
                 let name = loc.data().name;
                 let description = loc.data().description;
                 let address = loc.data().address;
@@ -77,7 +95,9 @@ function loadVancouver() {
                     '<p class="card-text" style="font-size: medium; float: left;">' + description + '</p><p class="card-text" style="font-size:' +
                     'medium; float: left;"><small class="text-muted">Last updated 3 mins ago</small></p></div></div></div></div>')
 
-                $('#rendervancouver').append(hello)
+                $('#rendervancouver').append(hello);
+
+                clickResult(id);
             })
         })
 }
@@ -112,7 +132,9 @@ function loadCanada() {
                     '<p class="card-text" style="font-size: medium; float: left;">' + description + '</p><p class="card-text" style="font-size:' +
                     'medium; float: left;"><small class="text-muted">Last updated 3 mins ago</small></p></div></div></div></div>')
 
-                $('#rendercanada').append(hello)
+                $('#rendercanada').append(hello);
+
+                clickResult(id);
             })
         })
 }
