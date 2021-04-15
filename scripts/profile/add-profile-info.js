@@ -31,7 +31,7 @@ function submitProfileInfo() {
             //console.log("Data was uploaded!")
             // short delay after submitting to show the 'weight' of the action
             setTimeout(function () {
-               window.location.assign("../profile/profile.html?location"); 
+               window.location.assign("../profile/profile.html"); 
             }, 500);
         })
     })
