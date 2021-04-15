@@ -185,7 +185,7 @@ function displayLoc(doc) {
     var id = doc.id;
 
     if (typeof (grabLocationPic(doc)) == "undefined") {
-        var photo = "images/logo.png";
+        var photo = "../../images/logo.png";
     } else {
         var photo = grabLocationPic(doc);
     }
@@ -253,7 +253,7 @@ function match(doc, userpref) {
 }
 
 // LETS GO I DID IT WOO
-// oscar was here
+// I'm going to leave this here since I'm pretty proud of figuring this out B)
 
 // redirects to the location clicked and has data stored in both URL and localstorage
 function clickResult(locaid) {
@@ -266,7 +266,7 @@ function clickResult(locaid) {
 
         // stores the location document ID into local storage to grab later
         localStorage.setItem('locationid', JSON.stringify(id));
-        window.location.href = "location.html" + "?" + locaid;
+        window.location.href = "../location/location.html" + "?" + locaid;
     })
 }
 

@@ -1,4 +1,3 @@
-
 // redirects the user to the search page and appends input to URL to be used
 function mainSearch() {
     let searchbutt = document.getElementById("searchbutt");
@@ -10,7 +9,7 @@ function mainSearch() {
 
         // the input to be used on the search page
         var transfer = userinput.value;
-        window.location.href = "search2.html?" + transfer;
+        window.location.href = "../location/search2.html?" + transfer;
 
     })
 
@@ -18,14 +17,14 @@ function mainSearch() {
 mainSearch();
 
 
-// quick-search button function
+// makes all quick-search buttons clickable and redirect to their location
 function quickSearch() {
     var quickbutt = document.getElementsByClassName("card-inner");
 
     var redirect = function() {
         let check = this.getAttribute("id");
         
-        window.location.href = "search2.html?" + check;
+        window.location.href = "../location/search2.html?" + check;
     };
     
     for (var i = 0; i < quickbutt.length; i++) {

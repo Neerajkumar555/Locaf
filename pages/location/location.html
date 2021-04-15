@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+    <title>Locaf - Location Page</title>
+    <meta name="project name" content="COMP1800 Team 23 Project - Locaf">
+    <meta name="author" content="Oscar La, Neeraj Kumar, Richard Mac, Parsa Boojari">
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,21 +13,17 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Optional styles and scripts of your own bfdbf7 1f7a8c 022b3a e1e5f2-->
-    <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/location.css">
+    <link rel="stylesheet" href="../../styles/misc/navbar.css">
+    <link rel="stylesheet" href="../../styles/location/location.css">
 
 </head>
 
 <body>
-
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
     <!-- Header Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand container2" href="main.html">
-                <img class="logo" alt="hello" src="images/logo.png">
+            <a class="navbar-brand container2" href="../misc/main.html">
+                <img class="logo" alt="hello" src="../../images/logo.png">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,22 +32,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../misc/main.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="aboutus.html">About Us</a>
+                        <a class="nav-link active" href="../misc/about-us.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="search2.html">Search</a>
+                        <a class="nav-link active" href="../location/search2.html">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="profile.html">Profile</a>
+                        <a class="nav-link active" href="../profile/profile.html">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active " href="login.html">Login/Signup</a>
+                        <a class="nav-link active " href="../misc/login.html">Login/Signup</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active " href="addlocation.html">Add Location</a>
+                        <a class="nav-link active " href="../location/location/add-location.html">Add Location</a>
                     </li>
                 </ul>
             </div>
@@ -60,18 +56,17 @@
 
     <div class="locontent">
         <div id="banner">
-            <!--This will load the photos from the restaurant database entry-->
             <div id="image">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="images/mapss.png" class="d-block w-100" alt="...">
+                            <img src="../../images/mapss.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="images/CafeLaptop.jpg" class="d-block w-100" alt="...">
+                            <img src="../../images/CafeLaptop.jpg" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="images/laptop_office_desk.jpg" class="d-block w-100" alt="...">
+                            <img src="../../images/laptop_office_desk.jpg" class="d-block w-100" alt="...">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
@@ -88,7 +83,6 @@
                 <div id="fade">
                 </div>
             </div>
-            <!--This will load in the restaurant info from the database-->
             <div class="baninfo">
                 <div id="storefront">
                     <img id="storefrontimg" alt="storefront image" src="https://dummyimage.com/1080x720/000/fff">
@@ -96,7 +90,6 @@
                 <div id="bannerinfo">
                     <h1 id="locaname">location name</h1>
                     <h5 id="locaaddress">location address</h5>
-                    <!-- <a href='postreview.html'>Write a Review</a> -->
                     <label id="avg_rtng"> Average Rating:</label>
                     <div class="stars">
                         <input class="star star-5" id="star-5" type="radio" disabled="disabled" name="star" />
@@ -110,7 +103,7 @@
                         <input class="star star-1" id="star-1" type="radio" disabled="disabled" name="star" />
                         <label class="star star-1" for="star-1"></label>
                     </div>
-                    <a class="btn btn-info" href="postreview.html" role="button">Write a Review</a>
+                    <a class="btn btn-info" href="location/post-review.html" role="button">Write a Review</a>
                 </div>
             </div>
         </div>
@@ -194,11 +187,12 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
 
-    <script src="/scripts/firebase_login.js"></script>
+    <script src="../../scripts/firebase/firebase-login.js"></script>
+
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-    <script src="/scripts/load_location_info.js"></script>
+    <script src="../../scripts/location/load-location-info.js"></script>
 
 </body>
 

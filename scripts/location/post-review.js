@@ -4,9 +4,9 @@ var locaID = getId();
 // dependent on getting document info from results page
 function getId() {
     var id = JSON.parse(localStorage.getItem('locationid')).id;
-    //console.log(id);
     return id;
 }
+
 
 // posts the review into the database
 function postReview() {
@@ -20,7 +20,6 @@ function postReview() {
         var star3 = document.getElementById('star-3').checked;
         var star2 = document.getElementById('star-2').checked;
         var star1 = document.getElementById('star-1').checked;
-        //console.log(text);
         
         if (star5) {
             rating = 5;
@@ -33,7 +32,6 @@ function postReview() {
         } else {
             rating = 1;
         }
-        //console.log(rating);
 
         firebase.auth().onAuthStateChanged(function (user) {
 
@@ -58,10 +56,10 @@ function postReview() {
                 reviewdetails: text
             })
         })
-
-        //console.log("review posted!!");
+        
+        //re-direct to ../misc/main.html after signup
         setTimeout(function () {
-           window.location.assign("submitted.html?review"); //re-direct to main.html after signup
+           window.location.assign("../misc/submitted.html?review"); 
         }, 1000);
     })
 }

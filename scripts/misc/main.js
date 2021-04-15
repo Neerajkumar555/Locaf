@@ -25,7 +25,7 @@ function loadHighRating() {
             docs.forEach(function (loc) {
                 console.log(loc);
                 if (typeof (grabLocationPic(loc)) == "undefined") {
-                    var photo = "images/logo.png";
+                    var photo = "../../images/logo.png";
                 } else {
                     var photo = grabLocationPic(loc);
                 }
@@ -51,7 +51,7 @@ function loadHighRating() {
 loadHighRating();
 
 
-// redirects to the location clicked and has data stored in both URL and localstorage
+// redirects to the location clicked and has data stored in both URL and localstorage - takes in a location id
 function clickResult(locaid) {
     var location = document.getElementById(locaid);
 
@@ -62,7 +62,7 @@ function clickResult(locaid) {
 
         // stores the location document ID into local storage to grab later
         localStorage.setItem('locationid', JSON.stringify(id));
-        window.location.href = "location.html" + "?" + locaid;
+        window.location.href = "../location/location.html" + "?" + locaid;
     })
 }
 
@@ -71,6 +71,8 @@ function clickResult(locaid) {
 function loadVancouver() {
     console.log("loading vancouver areas");
     db.collection('locations')
+    
+    //searches for 3 locations with the city "Vancouver"
         .where("city", "==", "Vancouver")
         .limit(3)
         .get()
@@ -78,7 +80,7 @@ function loadVancouver() {
             docs.forEach(function (loc) {
 
                 if (typeof (grabLocationPic(loc)) == "undefined") {
-                    var photo = "images/logo.png";
+                    var photo = "../../images/logo.png";
                 } else {
                     var photo = grabLocationPic(loc);
                 }
@@ -108,14 +110,16 @@ loadVancouver();
 function loadCanada() {
     console.log("loading canada areas");
     db.collection('locations')
+    //searches for 3 locations with the country "Canada"
         .where("country", "==", "Canada")
         .limit(3)
         .get()
         .then(function (docs) {
             docs.forEach(function (loc) {
 
+                // if location's picture is undefined, assign it a default pic
                 if (typeof (grabLocationPic(loc)) == "undefined") {
-                    var photo = "images/logo.png";
+                    var photo = "../../images/logo.png";
                 } else {
                     var photo = grabLocationPic(loc);
                 }
@@ -140,7 +144,8 @@ function loadCanada() {
 }
 loadCanada();
 
-function displaymsg() {
+// displays the user's name on the main screen
+function displayMsg() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             //console.log(users.uid);
@@ -157,10 +162,8 @@ function displaymsg() {
 
                 })
         } else {
-
             // No user is signed in.
         }
     })
 }
-
-displaymsg();
+displayMsg();

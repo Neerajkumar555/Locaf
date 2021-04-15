@@ -1,3 +1,5 @@
+var str = document.getElementById("address").value;
+
 // grabs and displays all user info
 function getUserInfo() {
     firebase.auth().onAuthStateChanged(function (users) {
@@ -30,123 +32,6 @@ function getUserInfo() {
 }
 getUserInfo();
 
-// function getEmail() {
-//     firebase.auth().onAuthStateChanged(function (users) {
-//         if (users) {
-            
-//             console.log(users.uid);
-//             db.collection("users").doc(users.uid)
-//                 .get()
-//                 .then(function (doc) {
-//                     var n = doc.data().email;
-//                     console.log(n);
-										
-//                     // displays the e-mail of the user on their profile
-//                     $("#email").text(n);
-										
-                    
-//                 })
-//         } else {
-//             // No user is signed in.
-//         }
-//     });
-// }
-// getEmail();
-
-// function getNumber() {
-//     firebase.auth().onAuthStateChanged(function (users) {
-//         if (users) {
-//             // User is signed in.
-            
-//             console.log(users.uid);
-//             db.collection("users").doc(users.uid)
-//                 .get()
-//                 .then(function (doc) {
-//                     var n = doc.data().number;
-//                     console.log(n);
-										
-//                     $("#number").text(n);
-										
-                    
-//                 })
-//         } else {
-//             // No user is signed in.
-//         }
-//     });
-// }
-// getNumber();
-
-// function getdesc() {
-//     firebase.auth().onAuthStateChanged(function (users) {
-//         if (users) {
-//             // User is signed in.
-            
-//             console.log(users.uid);
-//             db.collection("users").doc(users.uid)
-//                 .get()
-//                 .then(function (doc) {
-//                     var n = doc.data().description;
-//                     console.log(n);
-										
-//                     $("#desciption").text(n);
-										
-                    
-//                 })
-//         } else {
-//             // No user is signed in.
-//         }
-//     });
-// }
-// getdesc();
-
-// function getaddress() {
-//     firebase.auth().onAuthStateChanged(function (users) {
-//         if (users) {
-//             // User is signed in.
-            
-//             console.log(users.uid);
-//             db.collection("users").doc(users.uid)
-//                 .get()
-//                 .then(function (doc) {
-//                     var n = doc.data().address;
-//                     console.log(n);
-										
-//                     $("#address").text(n);
-										
-                    
-//                 })
-//         } else {
-//             // No user is signed in.
-//         }
-//     });
-// }
-// getaddress();
-
-
-
-// function getnickname() {
-//     firebase.auth().onAuthStateChanged(function (users) {
-//         if (users) {
-//             // User is signed in.
-            
-//             console.log(users.uid);
-//             db.collection("users").doc(users.uid)
-//                 .get()
-//                 .then(function (doc) {
-//                     var n = doc.data().nickname;
-//                     console.log(n);
-										
-//                     $("#nickname").text(n);
-										
-                    
-//                 })
-//         } else {
-//             // No user is signed in.
-//         }
-//     });
-// }
-
-// getnickname();
 
 // uploads the user profile picture into the database and connects to their account
 function uploadUserProfilePic() {
@@ -183,7 +68,7 @@ function uploadUserProfilePic() {
         })
     })
 }
-//uploadUserProfilePic();
+uploadUserProfilePic();
 
 
 // displays the user profile picture onto the page
@@ -201,7 +86,7 @@ function displayUserProfilePic() {
             })
     })
 }
-//displayUserProfilePic();
+displayUserProfilePic();
 
 
 // grabs the reviews associated with the user from the database and loads them onto the page
@@ -234,5 +119,3 @@ loadReviews();
 
 
 
-
-var str = document.getElementById("address").value;

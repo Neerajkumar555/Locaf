@@ -15,7 +15,7 @@
                      }).then(function () {
 
                          // redirects the user to the main page
-                         window.location.assign("main.html"); 
+                         window.location.assign("../misc/main.html"); 
                      })
                      .catch(function (error) {
                          console.log("Error adding new user: " + error);
@@ -34,7 +34,7 @@
 
      // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
      signInFlow: 'popup',
-     signInSuccessUrl: 'main.html',
+     signInSuccessUrl: '../misc/main.html',
      signInOptions: [
         // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
         // firebase.auth.FacebookAuthProvider.PROVIDER_ID,

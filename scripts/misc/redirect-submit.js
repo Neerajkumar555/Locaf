@@ -3,14 +3,14 @@
 function redirect() {
     var url = window.location.search;
 
-    // if the user came from the addlocation page
+    // if the user came from the location/add-location page
     if (url == "?location") {
 
         // small time-out period to let the reader know their action was submitted
         setTimeout(function() {
 
             // redirects to main page
-            window.location.href = "main.html";
+            window.location.href = "../misc/main.html";
         }, 1000)
 
     // if the user came from the submitreview page
@@ -18,7 +18,7 @@ function redirect() {
         setTimeout(function() {
 
             // redirects to previous location page
-            window.location.href = "location.html?";
+            window.location.href = "../location/location.html?";
         }, 1000)
     }
 }

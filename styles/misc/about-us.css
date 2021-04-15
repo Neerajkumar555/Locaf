@@ -31,7 +31,7 @@ html {
 }
 .about-section::after {
   content: "";
-  background: url("/images/aboutusbg.jpg");
+  background: url("/images/about-usbg.jpg");
   opacity: 0.8;
   top: 0;
   left: 0;
@@ -72,7 +72,7 @@ html {
   background-color: #555;
 }
 /* #about-con{
-    background-image: url("images/aboutusbg.jpg");
+    background-image: url("images/about-usbg.jpg");
     background-size: cover;
 } */
 @media screen and (max-width: 650px) {

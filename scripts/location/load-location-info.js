@@ -84,7 +84,7 @@ function getAvgRating() {
 getAvgRating();
 
 
-// displays a given rating onto the page
+// displays a given rating onto the page - takes in the calculated average rating
 function displayRating(avg) {
 
     document.getElementById("avg_rtng").textContent += " " + avg;

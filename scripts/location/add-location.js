@@ -8,7 +8,7 @@ const submitButton = document.getElementById('submit');
 const increment = firebase.firestore.FieldValue.increment(1);
 
 
-// uploads the photo into the database
+// uploads the photo into the database - takes in a user, a file, and the created document
 function uploadPhoto(user, file, entry) {
     var storageRef = storage.ref("images/" + user.uid + ".jpg");
 
@@ -84,9 +84,8 @@ function submitLocation() {
             // uploads the photo under the location; attributes to the user
             uploadPhoto(user, fileInput.files[0], newEntry)
 
-            //console.log("Data was uploaded!")
             setTimeout(function () {
-                window.location.assign("submitted.html?location"); 
+                window.location.assign("../misc/submitted.html?location"); 
              }, 1000);
 
         })
