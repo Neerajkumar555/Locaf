@@ -36,6 +36,7 @@ Through the shared desire of finding safe, viable locations to study (as well as
  ├── index.html                   # landing HTML file, this is what users see when you come to url
  └── README.md
 
+```
 It has the following subfolders and files:
 📦git                          ### Folder for git repo
 📦data                         ### Folder for dummy data
@@ -109,7 +110,7 @@ It has the following subfolders and files:
  ┗ 📂profile
  ┃ ┣ 📜add-profile-info.css
  ┃ ┗ 📜profile.css          
-📦unused                         ### Folder for unused files
+📦unused                          ### Folder for unused files
  ┣ 📜cafe-maps.html
  ┣ 📜google-map.html
  ┣ 📜other-profile.html
@@ -122,7 +123,7 @@ Firebase hosting files:
 ├── firebase.indexes.json
 ├── .firestore.rules
 ├── storage.rules
-
+```
 
 ## Features 
 - Basic storage/query functions for location and user info
