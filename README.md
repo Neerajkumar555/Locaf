@@ -137,7 +137,8 @@ Firebase hosting files:
 
 ## Installation 
 Simply clone the branch to get a working copy of our code. Can also run the code with the following link:
-[Locaf-Link-Here] (https://locaf-f1e23.web.app/)
+
+https://locaf-f1e23.web.app/
 
 ## Credits 
 - Our COMP1800 instructor Carly Orr for her guidance and advice throughout the process.
