@@ -29,6 +29,14 @@ Through the shared desire of finding safe, viable locations to study (as well as
 - JQuery
 - NPM
 
+## Features 
+- Basic storage/query functions for location and user info
+- Basic authentication facilitated through firebase
+- Simple search function with adjustable preferences
+- Review and rating system
+- Photo upload to both location and user
+- Able to see other users' photos and reviews
+
 ## Content 
 ### Content of the project folder: ###
 
@@ -127,14 +135,6 @@ Firebase hosting files:
 ├── storage.rules
 ```
 
-## Features 
-- Basic storage/query functions for location and user info
-- Basic authentication facilitated through firebase
-- Simple search function with adjustable preferences
-- Review and rating system
-- Photo upload to both location and user
-- Able to see other users' photos and reviews
-
 ## Installation 
 Simply clone the branch to get a working copy of our code. Can also run the code with the following link:
 
@@ -161,7 +161,3 @@ https://locaf-f1e23.web.app/
 - https://firebase.google.com/
 - https://jquery.com/
 - https://www.npmjs.com/
-
-
-
-
