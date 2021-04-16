@@ -27,6 +27,7 @@ Through the shared desire of finding safe, viable locations to study (as well as
 - Bootstrap
 - Firebase/firestore
 - JQuery
+- NPM
 
 ## Content 
 ### Content of the project folder: ###
@@ -141,5 +142,25 @@ Simply clone the branch to get a working copy of our code. Can also run the code
 ## Credits 
 - Our COMP1800 instructor Carly Orr for her guidance and advice throughout the process.
 - Our peers in COMP1800 Set D for their feedback and ideas.
+
+## References
+### Images ###
+- https://ru.freepik.com/free-vector/nice-restaurant-background-illustrated_13425423.htm
+- https://unsplash.com/photos/4-EeTnaC1S4
+- https://www.logospng.com/topic/coffee
+- https://www.pexels.com/photo/dawn-caffeine-coffee-cup-5490117/
+- https://unsplash.com/photos/7hyEZdGHUuI
+- https://www.pinterest.ca/pin/504403227017169046/
+- https://unsplash.com/photos/1-YQiOijio8
+### Design ###
+- https://coolors.co
+- https://www.freelogodesign.org/
+### Frameworks/APIs ###
+- https://getbootstrap.com/
+- https://firebase.google.com/
+- https://jquery.com/
+- https://www.npmjs.com/
+
+
 
 
